@@ -19,6 +19,8 @@ export const App = () => {
     }
   }, [authResolved, authUser, history]);
 
+
+  
   return authResolved ? (
     <ChatProvider authUser={authUser}>
       <div className="app">
