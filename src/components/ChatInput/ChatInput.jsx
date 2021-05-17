@@ -42,9 +42,9 @@ export const ChatInput = () => {
         >
           <Icon name="attach" color="grey" />
         </div>
-        <input
+        <input 
           value={chatInputText}
-          className="chat-input"
+          className="chat-input" 
           placeholder="Send a message"
           onKeyPress={e => {
             if (e.key === 'Enter') {
