@@ -87,7 +87,7 @@ export const RailHeader = () => {
               <Icon corner name="camera" inverted circular />
             </IconGroup>
 
-            <div className="current-username">@{chatConfig.userName}</div>
+            <div className="current-username">{chatConfig.userName}</div>
           </div>
         ) : (
           <div className="user-loading">

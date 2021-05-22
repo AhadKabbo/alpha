@@ -27,8 +27,8 @@ export const Signup = () => {
             fb.firestore
               .collection('chatUsers')
               .doc(res.user.uid)
-              .set({ userName, avatar: '' });
-          });
+              .set({ userName, avatar: '', signupUserId: res.user.uid });
+          } )  ;
         } else {
           setServerError(
             "We're having trouble signing you up. Please try again.",
@@ -43,9 +43,9 @@ export const Signup = () => {
             "We're having trouble signing you up. Please try again.",
           );
         }
-      })
+      }); history.push("/")
       .finally(() => setSubmitting(false));
-  };
+  }
 
   return (
     <div className="auth-form">

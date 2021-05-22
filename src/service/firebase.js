@@ -22,7 +22,9 @@ try {
 // Passing off firebase.auth() instead of firebase.auth
 // allows us to share the same instance of Firebase throughout
 // the entire app whenever we import it from here.
-
+export const database = {
+  getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp,
+}
 export const fb = {
   auth: firebase.auth(),
   storage: firebase.storage(),

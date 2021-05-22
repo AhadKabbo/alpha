@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 
 export const useAuth = () => {
   const [authUser, setAuthUser] = useState(); // undefined | firebase.User | null
+  
 
   useEffect(() => {
     const unsubscribe = fb.auth.onAuthStateChanged(user => {

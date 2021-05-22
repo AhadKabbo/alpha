@@ -17,7 +17,7 @@ export const Login = () => {
           setServerError(
             "We're having trouble logging you in. Please try again.",
           );
-        }
+        } history.push("/")
       })
       .catch(err => {
         if (err.code === 'auth/wrong-password') {
