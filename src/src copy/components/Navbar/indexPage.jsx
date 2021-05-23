@@ -5,6 +5,7 @@ import {IconContext} from 'react-icons/lib'
 import { NavP, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinksP, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
+import { MdChat, MdChatBubbleOutline, MdSentimentVerySatisfied } from 'react-icons/md';
 
 
 
@@ -66,10 +67,15 @@ const NavbarPage = ({ toggle }) => {
           {
             authUser  ? (
 
-          
+          <>
           <NavBtnI>
-            <NavBtnLinkI to='/User'>profile <CgProfile/></NavBtnLinkI>
+            <NavBtnLinkI to='/User'>Profile <CgProfile/></NavBtnLinkI>
           </NavBtnI>
+
+          <NavBtnI>
+          <NavBtnLinkI to='/chat'>My chat <MdSentimentVerySatisfied/></NavBtnLinkI>
+          </NavBtnI>
+          </>
           )    :  (
             <NavBtn>
               <NavBtnLink to='/Login'>Sign In</NavBtnLink>

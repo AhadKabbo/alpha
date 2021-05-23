@@ -45,6 +45,10 @@ export const Login = () => {
             <FormField name="email" label="Email" type="email" />
             <FormField name="password" label="Password" type="password" />
 
+
+            <button type="submit" disabled={!isValid || isSubmitting}>
+              Login
+            </button>
             <div className="auth-link-container">
               Don't have an account?{' '}
               <span
@@ -55,9 +59,17 @@ export const Login = () => {
               </span>
             </div>
 
-            <button type="submit" disabled={!isValid || isSubmitting}>
-              Login
-            </button>
+            <div className="auth-link-container">
+              Can't remember your Password?{' '}
+              <span
+                className="auth-link"
+                onClick={() => history.push('forgot-password')}
+              >
+                Forget_pass!
+              </span>
+            </div>
+
+            
           </Form>
         )}
       </Formik>

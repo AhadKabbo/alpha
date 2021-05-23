@@ -6,7 +6,8 @@ import { Login, Signup, Chat } from 'components';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../src copy/pages';
 import User from "../../src copy/components/authentication/User"
-
+import ForgotPassword from "../../src copy/components/authentication/ForgotPassword"
+// import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
 
 
 export const App = () => {
@@ -34,24 +35,38 @@ export const App = () => {
       <Route>
         <Switch>
         <Route path="/" component={Home} exact/>
+        
         {
-    authUser ? (
+          authUser ? (
+      
           <Route path="/User" component={User} />
+          
+      
           ) : (
-            <div className="app1">
-            <Route path="/login" component={Login} />;
+            <>
+            <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            </div>
+            </>
           )}
 
-
-
+<>
 
         <div className="app1">
           <Route path="/chat" component={Chat}  />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           </div>
+          <Route path="/forgot-password" component={ForgotPassword} /> 
+
+
+
+
+
+
+
+
+
+</>
         </Switch>
         </Route>
     </ChatProvider>

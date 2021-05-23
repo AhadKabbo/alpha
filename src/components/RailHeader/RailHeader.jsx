@@ -4,8 +4,10 @@ import { useResolved } from 'hooks';
 import { useRef, useState } from 'react';
 import { ImageUpload } from 'components';
 import { Icon, IconGroup, Image, Loader } from 'semantic-ui-react';
+import { Link, useHistory } from 'react-router-dom';
 
 export const RailHeader = () => {
+  const history = useHistory();
   const { chatConfig } = useChat();
   const configResolved = useResolved(chatConfig);
   const inputRef = useRef(null);
@@ -59,7 +61,7 @@ export const RailHeader = () => {
 
       <div className="left-rail-header">
         <Icon
-          onClick={() => fb.auth.signOut()}
+          onClick={() =>history.push("/")}
           className="sign-out"
           name="sign out"
         />
