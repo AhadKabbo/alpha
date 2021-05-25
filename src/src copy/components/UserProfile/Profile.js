@@ -91,13 +91,3 @@ const Profile = ({ alt, img }) => {
   );
 };
 export default Profile;
-{
-  /* <Link to="/"  className="sign-out" name="sign out">
-              
-<Icon 
- 
-  className="sign-out"
-  name="sign out"
-/>
-</Link> */
-}

@@ -5,7 +5,7 @@ import {IconContext} from 'react-icons/lib'
 import { NavP, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinksP, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
-import { MdChat, MdChatBubbleOutline, MdSentimentVerySatisfied } from 'react-icons/md';
+import { MdSentimentVerySatisfied } from 'react-icons/md';
 
 
 

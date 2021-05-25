@@ -113,12 +113,12 @@ export const SideBtnWrap = styled.div`
   justify-content: center;
 `
 export const SidebarRoute = styled(LinkR)`
-  border-radius: 50px;
+ border-radius: 50px;
   background: #1CC7D9;
   white-space: nowrap;
-  padding: 16px 64px;
+  padding: 10px 45px;
   color: #040404;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   font-style: oblique;
   font-variant:small-caps;
@@ -126,6 +126,32 @@ export const SidebarRoute = styled(LinkR)`
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  
+  
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background: #f4f4fc;
+    color: #040404;
+  }
+`
+
+export const SidebarRouteC = styled(LinkR)`
+ border-radius: 50px;
+  background: #1CC7D9;
+  white-space: nowrap;
+  padding: 10px 40px;
+  color: #040404;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: oblique;
+  font-variant:small-caps;
+  outline:  none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
   
 
   &:hover {

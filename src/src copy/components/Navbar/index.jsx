@@ -5,6 +5,7 @@ import {IconContext} from 'react-icons/lib'
 import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinks, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
+import { MdSentimentVerySatisfied } from 'react-icons/md';
 
 const Navbar = ({ toggle }) => {
   // const {currentUser } = useAuth()
@@ -63,9 +64,15 @@ const Navbar = ({ toggle }) => {
             authUser ? (
 
           
-          <NavBtnI>
-            <NavBtnLinkI to='/User'>profile <CgProfile/></NavBtnLinkI>
-          </NavBtnI>
+              <>
+              <NavBtnI>
+                <NavBtnLinkI to='/User'>Profile <CgProfile/></NavBtnLinkI>
+              </NavBtnI>
+    
+              <NavBtnI>
+              <NavBtnLinkI to='/chat'>My chat <MdSentimentVerySatisfied/></NavBtnLinkI>
+              </NavBtnI>
+              </>
           )    :  (
             <NavBtn>
               <NavBtnLink to='/Login'>Sign In</NavBtnLink>

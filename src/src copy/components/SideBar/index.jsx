@@ -1,8 +1,8 @@
 import React from 'react'
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebarLinkR, SidebarRoute, SideBtnWrap } from './SidebarElements'
+import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebarLinkR, SidebarRoute, SidebarRouteC, SideBtnWrap } from './SidebarElements'
 import { CgProfile } from 'react-icons/cg'
 import { useAuth } from "../../../hooks"
-
+import { MdSentimentVerySatisfied } from 'react-icons/md';
 
 const Sidebar = ({isOpen,toggle}) => {
   const { authUser } = useAuth();
@@ -27,9 +27,14 @@ const Sidebar = ({isOpen,toggle}) => {
 
         {
             authUser ? (
-        <SideBtnWrap>
-          <SidebarRoute to='/User'><CgProfile/>   profile</SidebarRoute>
+      <>
+        <SideBtnWrap style={{  marginBottom: '1.5rem' }}>
+          <SidebarRouteC to='/chat'><MdSentimentVerySatisfied/>My Chat</SidebarRouteC>
         </SideBtnWrap>
+        <SideBtnWrap>
+        <SidebarRoute to='/User'><CgProfile/>   Profile</SidebarRoute>
+      </SideBtnWrap>
+      </>
         )    :  (
         <SideBtnWrap>
           <SidebarRoute to='/Login'>Sign in</SidebarRoute>
