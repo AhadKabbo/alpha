@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fb } from '../../../service';
 import { Button, Row, Col, Card, Container } from 'react-bootstrap';
-
 import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faLaugh } from '@fortawesome/free-solid-svg-icons';
-import { DeleteBtn } from './DeleteBtn';
+import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
-export default function PersonalFeeds() {
+export default function Fb() {
   const { authUser } = useAuth();
-  const [usersP, setUsers] = React.useState([]);
+  const [usersF, setUsers] = React.useState([]);
   const [chat, setChatUsers] = useState([]);
 
   useEffect(() => {
@@ -25,8 +24,8 @@ export default function PersonalFeeds() {
     fetchData();
   }, []);
 
-  const personalUser = usersP.filter(obj => {
-    return obj.userId === authUser.uid;
+  const fbUsers = usersF.filter(obj => {
+    return obj.fb_Tag === true;
   });
 
   // useEffect(() => {
@@ -39,8 +38,8 @@ export default function PersonalFeeds() {
   //   fetchData();
   // }, []);
 
-  // const nameFilter = chat.filter(objN => {
-  //   return objN.signupUserId === authUser.uid;
+  // const nameFilter = chat.filter(obj => {
+  //   return obj.signupUserId === authUser.uid;
   // });
 
   return (
@@ -56,14 +55,17 @@ export default function PersonalFeeds() {
           fontWeight: 'bold',
         }}
       >
-        My Profile Timeline
+        FaceBook
       </Card.Title>
       <Card
         className="overflow-auto"
         style={{ marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
-          {personalUser.map(user => (
+          {/* <strong>Facebook Promotion</strong>
+          <br />
+          <br /> */}
+          {fbUsers.map(user => (
             <Container
               className="overflow-auto d-flex align-items-center justify-content-center "
               style={{ padding: '10px', maxHeight: '60rem' }}

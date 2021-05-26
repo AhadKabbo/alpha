@@ -7,13 +7,14 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../../src copy/pages';
 import User from "../../src copy/components/authentication/User"
 import ForgotPassword from "../../src copy/components/authentication/ForgotPassword"
+import SortGrp from "../../src copy/components/dataSortSection/SortGrp"
 // import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
 
 
 export const App = () => {
   // const history = useHistory();
   const { authUser } = useAuth();
-  console.log(authUser);
+  // console.log(authUser);
   // const authResolved = useResolved(authUser);
 
   // // If the user is logged in it will prevent the
@@ -38,25 +39,30 @@ export const App = () => {
         
         {
           authUser ? (
-      
-          <Route path="/User" component={User} />
+        <>
+        <div className="app2">
+          <Route path="/user" component={User} />
+          <Route path="/newsfeed" component={SortGrp}/>
+          </div>
+          <div className="app1">
+          <Route path="/chat" component={Chat}  />
+          </div>
           
-      
+         </>
           ) : (
-            <>
+            <div className="app1">
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            </>
+            <Route path="/forgot-password" component={ForgotPassword} /> 
+            </div>
           )}
 
 <>
 
         <div className="app1">
           <Route path="/chat" component={Chat}  />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
           </div>
-          <Route path="/forgot-password" component={ForgotPassword} /> 
+          
 
 
 

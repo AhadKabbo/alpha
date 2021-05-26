@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaNewspaper, FaSignInAlt } from "react-icons/fa";
 import { CgProfile } from 'react-icons/cg'
 import {IconContext} from 'react-icons/lib'
 import { NavP, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinksP, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
-import { MdSentimentVerySatisfied } from 'react-icons/md';
+import { MdChatBubble } from 'react-icons/md';
 
 
 
@@ -67,19 +67,23 @@ const NavbarPage = ({ toggle }) => {
           {
             authUser  ? (
 
-          <>
-          <NavBtnI>
-            <NavBtnLinkI to='/User'>Profile <CgProfile/></NavBtnLinkI>
-          </NavBtnI>
+              <> 
+              <NavBtnI>
+                <NavBtnLinkI to='/User'><CgProfile style={{ color: '#DC5B21', marginBottom: '3px' }}/>  Profile</NavBtnLinkI>
+              </NavBtnI>
+    
+              <NavBtnI>
+              <NavBtnLinkI to='/chat'> <MdChatBubble style={{ color: '#DC5B21', marginBottom: '3px' }}/>  My Chat</NavBtnLinkI>
+              </NavBtnI>
 
-          <NavBtnI>
-          <NavBtnLinkI to='/chat'>My chat <MdSentimentVerySatisfied/></NavBtnLinkI>
-          </NavBtnI>
-          </>
+              <NavBtnI>
+                <NavBtnLinkI to='/newsfeed'><FaNewspaper style={{ color: '#DC5B21', marginBottom: '3px' }}/>  NewsFeed</NavBtnLinkI>
+              </NavBtnI>
+              </>
           )    :  (
-            <NavBtn>
-              <NavBtnLink to='/Login'>Sign In</NavBtnLink>
-            </NavBtn>
+            <NavBtnI>
+                <NavBtnLinkI to='/login'><FaSignInAlt style={{ color: '#DC5B21', marginBottom: '3px' }}/>   LogIn</NavBtnLinkI>
+              </NavBtnI>
             ) }
         </NavbarContainer>
       </NavP>

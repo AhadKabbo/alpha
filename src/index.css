@@ -38,6 +38,12 @@ code {
   justify-content: center;
   background-color: #161414;
 }
+.app2 {
+  max-width: auto;
+  max-height: auto;
+  background: none;
+  overflow: hidden;
+}
 
 @media screen and (max-width: 600px) {
   .app {

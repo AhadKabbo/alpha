@@ -1,20 +1,22 @@
 import { fb } from '../../../service';
-// import { useAuthHome } from "../../contexts/AuthContext"
 import { useAuth } from '../../../hooks';
+import { useAuth2 } from '../../../hooks';
 import { database } from '../../../service';
 import React, { useState } from 'react';
 import { Button, Modal, Form, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faFileUpload } from '@fortawesome/free-solid-svg-icons';
-// import {uniqid } from uniqid;
-// const fb.firestore = app.firestore();
 
 export default function CreatPost() {
+  const { authUser } = useAuth();
+  const { nameFilter } = useAuth2();
+
   const uniqid = require('uniqid');
   const [open, setOpen] = useState(false);
-  const [fileUrl, setFileUrl] = React.useState(null);
-  // const { currentUser } = useAuthHome()
-  const { authUser } = useAuth();
+  const [facebook, setTnc] = useState(false);
+  const [instagram, setTnc2] = useState(false);
+  const [youtube, setTnc3] = useState(false);
+  const [fileUrl, setFileUrl] = useState(null);
 
   function openModal() {
     setOpen(true);
@@ -47,10 +49,15 @@ export default function CreatPost() {
       createdAt: database.getCurrentTimestamp(),
       likes: null,
       comments: null,
+      fb_Tag: facebook,
+      insta_Tag: instagram,
+      youtube_Tag: youtube,
+      creator: nameFilter[0].userName,
     });
     closeModal();
   };
 
+  // console.log(nameFilter[0].userName);
   return (
     <>
       <Card style={{ border: 'none' }}>
@@ -84,6 +91,58 @@ export default function CreatPost() {
                     placeholder="write somthing...."
                   />
                 </Form.Group>
+
+                <Form.Group
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    listStyle: 'none',
+                    textAlign: 'center',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                >
+                  <div class="form-check mr-3">
+                    <input
+                      type="checkbox"
+                      onChange={e => setTnc(e.target.checked)}
+                      class="form-check-input"
+                      id="anime"
+                      name="hobby"
+                    />
+                    <label class="form-check-label" for="anime">
+                      facebook
+                    </label>
+                  </div>
+
+                  <div class="form-check mr-3">
+                    <input
+                      type="checkbox"
+                      onChange={e => setTnc2(e.target.checked)}
+                      class="form-check-input"
+                      id="anime"
+                      name="hobby"
+                    />
+                    <label class="form-check-label" for="anime">
+                      Instagram
+                    </label>
+                  </div>
+
+                  <div class="form-check mr-3">
+                    <input
+                      type="checkbox"
+                      onChange={e => setTnc3(e.target.checked)}
+                      class="form-check-input"
+                      id="anime"
+                      name="hobby"
+                    />
+                    <label class="form-check-label" for="anime">
+                      Youtube
+                    </label>
+                  </div>
+                </Form.Group>
+
                 <Form.Group>
                   <label className="btn btn-outline-success btn-sm m-0 mr-2">
                     <FontAwesomeIcon icon={faFileUpload} /> Attached a File

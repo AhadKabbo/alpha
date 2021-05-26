@@ -180,26 +180,27 @@ export const NavBtnLink = styled(LinkR)`
     color: #040404;
   }
 `
+
+
 export const NavBtnLinkI = styled(LinkR)`
-  /* border-radius: 100px;
-  background: #DC5B21;
+  border-radius: 80px;
+  background: #f4f4fc;
   white-space: nowrap;
-  padding: 10px 22px;
-  color: #040404; */
-  font-size: 25px;
-  font-weight: bold;
-  color: #f4f4fc;
-  font-style: oblique;
+  padding: 5px 12px;
+  color: #DC5B21;
+  font-size: 14px;
   font-variant:small-caps;
+  font-style: oblique;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  /* text-decoration: none; */
+  text-decoration: none;
+
   &:hover {
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    background: none;
-    color: #1CC7D9;
+    background: #1CC7D9;
+    color: #040404;
   }
 `

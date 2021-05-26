@@ -1,8 +1,9 @@
 import React from 'react'
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebarLinkR, SidebarRoute, SidebarRouteC, SideBtnWrap } from './SidebarElements'
+import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebarLinkR, SidebarRoute, SidebarRouteC, SidebarRouteN, SideBtnWrap } from './SidebarElements'
 import { CgProfile } from 'react-icons/cg'
 import { useAuth } from "../../../hooks"
-import { MdSentimentVerySatisfied } from 'react-icons/md';
+import { MdChatBubble } from 'react-icons/md';
+import { FaNewspaper, FaSignInAlt } from 'react-icons/fa';
 
 const Sidebar = ({isOpen,toggle}) => {
   const { authUser } = useAuth();
@@ -29,15 +30,20 @@ const Sidebar = ({isOpen,toggle}) => {
             authUser ? (
       <>
         <SideBtnWrap style={{  marginBottom: '1.5rem' }}>
-          <SidebarRouteC to='/chat'><MdSentimentVerySatisfied/>My Chat</SidebarRouteC>
+          <SidebarRouteC to='/chat'><MdChatBubble/>  My Chat</SidebarRouteC>
         </SideBtnWrap>
+
+        <SideBtnWrap style={{  marginBottom: '1.5rem' }}>
+          <SidebarRouteN to='/newsfeed'><FaNewspaper/>  NewsFeed</SidebarRouteN>
+        </SideBtnWrap>
+
         <SideBtnWrap>
         <SidebarRoute to='/User'><CgProfile/>   Profile</SidebarRoute>
       </SideBtnWrap>
       </>
         )    :  (
-        <SideBtnWrap>
-          <SidebarRoute to='/Login'>Sign in</SidebarRoute>
+          <SideBtnWrap>
+          <SidebarRoute to='/login'><FaSignInAlt/>  LogIn</SidebarRoute>
         </SideBtnWrap>
         ) }
 

@@ -16,7 +16,7 @@ const Info2 = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, d
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonR to='/Login'
+                  <ButtonR to='/newsfeed'
                   smooth={true}
                   duration={500}
                   spy={true}
@@ -29,7 +29,7 @@ const Info2 = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, d
                   </ButtonR>
                 </BtnWrap>
 
-                <BtnWrap2>
+                {/* <BtnWrap2>
                   <Button to='services'
                   smooth={true}
                   duration={500}
@@ -41,7 +41,7 @@ const Info2 = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, d
                   dark2={dark2 ? 1 : 0}
                   >{buttonLabel2}
                   </Button>
-                </BtnWrap2>
+                </BtnWrap2> */}
 
               </TextWrapper>
             </Column1>
