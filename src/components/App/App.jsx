@@ -19,10 +19,10 @@ export const App = () => {
   // console.log(authUser);
   const authResolved = useResolved(authUser);
 
-  if (authResolved) {
-    const verification = authUser.emailVerified;
-    console.log(verification);
-  }
+  // if (authResolved) {
+  //   const verification = authUser.emailVerified;
+  //   console.log(verification);
+  // }
 
   // // If the user is logged in it will prevent the
   // // user from seeing the login/signup screens
