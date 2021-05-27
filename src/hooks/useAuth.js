@@ -1,5 +1,6 @@
 import { fb } from 'service';
 import { useEffect, useState } from 'react';
+import { useResolved } from 'hooks';
 
 // Initialized as undefined and set to null if not logged in
 // This gives us a way to determine whether or not the hook
@@ -16,6 +17,7 @@ import { useEffect, useState } from 'react';
 
 export const useAuth = () => {
   const [authUser, setAuthUser] = useState(); // undefined | firebase.User | null
+  const authResolved = useResolved(authUser);
 
   function signup(email, password) {
     return fb.auth.createUserWithEmailAndPassword(email, password);
@@ -33,6 +35,17 @@ export const useAuth = () => {
     return authUser.updatePassword(password);
   }
 
+  function verifyEmail() {
+    authUser
+      .sendEmailVerification()
+      .then(function () {
+        // Email sent.
+      })
+      .catch(function (error) {
+        // An error happened.
+      });
+  }
+
   useEffect(() => {
     const unsubscribe = fb.auth.onAuthStateChanged(user => {
       if (user) {
@@ -44,9 +57,14 @@ export const useAuth = () => {
     return unsubscribe;
   }, []);
 
+  // if (authResolved) {
+  //   const verification = authUser.emailVerified;
+  //   console.log(verification);
+  // }
   return {
-    resetPassword,
     authUser,
+    verifyEmail,
+    resetPassword,
     login,
     signup,
     updatePassword,

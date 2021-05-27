@@ -124,6 +124,9 @@ export default function PersonalFeeds() {
                         <FontAwesomeIcon icon={faComment} />
                       </Button>
                     </Col>
+                    <Col>
+                      <DeleteBtn user={user} />
+                    </Col>
                   </Row>
                 </Card>
               </Card>

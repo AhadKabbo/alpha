@@ -43,7 +43,7 @@ export const Signup = () => {
             "We're having trouble signing you up. Please try again.",
           );
         }
-      }); history.push("/")
+      }); history.push("/verify-email")
       .finally(() => setSubmitting(false));
   }
 

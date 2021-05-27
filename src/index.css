@@ -38,15 +38,9 @@ code {
   justify-content: center;
   background-color: #161414;
 }
-.app2 {
-  max-width: auto;
-  max-height: auto;
-  background: none;
-  overflow: hidden;
-}
 
 @media screen and (max-width: 600px) {
-  .app {
+  .app1 {
     max-width: 100%;
     border-radius: 2px;
     height: 100vh;
@@ -58,6 +52,14 @@ code {
     background-color: #161414;
   }
 }
+
+.app2 {
+  max-width: auto;
+  max-height: auto;
+  background: none;
+  overflow: hidden;
+}
+
 .auth-form {
   color: #f4f4fc;
   width: 500px;
