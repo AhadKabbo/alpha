@@ -51,6 +51,7 @@ export const App = () => {
 
         <div className="app1">
           <Route path="/chat" component={Chat}  />
+          <Route path="/verify-email" component={VerifyEmail} /> 
           </div>
 
         </Switch>
@@ -68,7 +69,7 @@ export const App = () => {
             <Route path="/signup" component={Signup} />
             <Route path="/forgot-password" component={ForgotPassword} /> 
             
-            <Route path="/verify-email" component={VerifyEmail} /> 
+            
             </div>
         </Switch>
       </Route>
