@@ -54,7 +54,7 @@ const Profile = ({ alt, img }) => {
                 overflow: 'hidden',
               }}
             >
-              <CardImg src={img} alt={alt} />
+              <CardImg src={user.avatar} alt={alt} />
             </Card>
 
             <Card.Title

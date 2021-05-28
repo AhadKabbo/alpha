@@ -10,7 +10,6 @@ import { faEdit, faFileUpload } from '@fortawesome/free-solid-svg-icons';
 export default function CreatPost() {
   const { authUser } = useAuth();
   const { nameFilter } = useAuth2();
-
   const uniqid = require('uniqid');
   const [open, setOpen] = useState(false);
   const [facebook, setTnc] = useState(false);
@@ -39,11 +38,13 @@ export default function CreatPost() {
   const onSubmit = async e => {
     e.preventDefault();
     const username = e.target.username.value;
+    const inputUrl = e.target.inputUrl.value;
     if (!username || !fileUrl) {
       return;
     }
     await fb.firestore.collection('users').doc(username).set({
       name: username,
+      locate: inputUrl,
       avatar: fileUrl,
       userId: authUser.uid,
       createdAt: database.getCurrentTimestamp(),
@@ -82,12 +83,36 @@ export default function CreatPost() {
           <Modal show={open} onHide={closeModal}>
             <Form onSubmit={onSubmit}>
               <Modal.Body>
-                <Form.Group>
+                <Form.Group
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                >
                   <Form.Control
                     as="textarea"
                     rows={5}
                     type="text"
                     name="username"
+                    placeholder="write somthing...."
+                  />
+                </Form.Group>
+
+                <Form.Group
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                >
+                  <Form.Control
+                    as="textarea"
+                    rows={1}
+                    type="url"
+                    name="inputUrl"
                     placeholder="write somthing...."
                   />
                 </Form.Group>
@@ -103,7 +128,7 @@ export default function CreatPost() {
                     // marginBottom: "10px",
                   }}
                 >
-                  <div class="form-check mr-3">
+                  <div class="form-check mr-5">
                     <input
                       type="checkbox"
                       onChange={e => setTnc(e.target.checked)}
@@ -111,9 +136,7 @@ export default function CreatPost() {
                       id="anime"
                       name="hobby"
                     />
-                    <label class="form-check-label" for="anime">
-                      facebook
-                    </label>
+                    <label class="form-check-label">facebook</label>
                   </div>
 
                   <div class="form-check mr-3">
@@ -124,9 +147,7 @@ export default function CreatPost() {
                       id="anime"
                       name="hobby"
                     />
-                    <label class="form-check-label" for="anime">
-                      Instagram
-                    </label>
+                    <label class="form-check-label">Instagram</label>
                   </div>
 
                   <div class="form-check mr-3">
@@ -137,13 +158,18 @@ export default function CreatPost() {
                       id="anime"
                       name="hobby"
                     />
-                    <label class="form-check-label" for="anime">
-                      Youtube
-                    </label>
+                    <label class="form-check-label">Youtube</label>
                   </div>
                 </Form.Group>
 
-                <Form.Group>
+                <Form.Group
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                >
                   <label className="btn btn-outline-success btn-sm m-0 mr-2">
                     <FontAwesomeIcon icon={faFileUpload} /> Attached a File
                     <input
@@ -159,10 +185,28 @@ export default function CreatPost() {
                 </Form.Group>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={closeModal}>
+                <Button
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                  variant="secondary"
+                  onClick={closeModal}
+                >
                   Close
                 </Button>
-                <Button variant="success" type="submit">
+                <Button
+                  style={{
+                    display: 'flex',
+                    padding: '10px',
+
+                    // marginBottom: "10px",
+                  }}
+                  variant="success"
+                  type="submit"
+                >
                   Upload
                 </Button>
               </Modal.Footer>

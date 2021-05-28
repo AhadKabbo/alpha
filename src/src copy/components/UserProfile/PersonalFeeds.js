@@ -1,16 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { fb } from '../../../service';
-import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+import {
+  Button,
+  Row,
+  Col,
+  Card,
+  Container,
+  Modal,
+  Alert,
+} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 import { DeleteBtn } from './DeleteBtn';
 
 export default function PersonalFeeds() {
   const { authUser } = useAuth();
   const [usersP, setUsers] = React.useState([]);
   const [chat, setChatUsers] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  function openModal() {
+    setOpen(true);
+  }
+
+  function closeModal() {
+    setOpen(false);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -95,9 +113,21 @@ export default function PersonalFeeds() {
                     marginBottom: '1rem',
                   }}
                 >
+                  {' '}
+                  <Alert variant="secondary" show={open} onHide={closeModal}>
+                    <Alert.Heading>Hey, nice to see you...</Alert.Heading>
+                    <hr />
+                    <Card.Link to="google.com" style={{ padding: '5px' }}>
+                      {user.locate}
+                    </Card.Link>
+                    <hr />
+                    <Button variant="secondary" onClick={closeModal}>
+                      Close
+                    </Button>
+                  </Alert>
                   <Card.Text
                     className="overflow-auto"
-                    style={{ padding: '5px' }}
+                    style={{ padding: '5px', minHeight: '7rem' }}
                   >
                     {user.name}
                   </Card.Text>
@@ -110,6 +140,7 @@ export default function PersonalFeeds() {
                         className="w-100 "
                         variant="outline-success"
                         size="sm"
+                        // onClick={closeModal}
                       >
                         <FontAwesomeIcon icon={faLaugh} />
                       </Button>
@@ -118,10 +149,11 @@ export default function PersonalFeeds() {
                     <Col>
                       <Button
                         className="w-100 "
+                        onClick={openModal}
                         variant="outline-success"
                         size="sm"
                       >
-                        <FontAwesomeIcon icon={faComment} />
+                        <FontAwesomeIcon icon={faLink} />
                       </Button>
                     </Col>
                     <Col>
@@ -130,6 +162,12 @@ export default function PersonalFeeds() {
                   </Row>
                 </Card>
               </Card>
+
+              {/* <Modal show={open} onHide={closeModal}>
+                <Link to="google.com" style={{ padding: '5px' }}>
+                  {user.locate}
+                </Link>
+              </Modal> */}
             </Container>
           ))}
         </Card.Body>
