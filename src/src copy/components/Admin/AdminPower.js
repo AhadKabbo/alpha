@@ -1,128 +1,186 @@
-// import React, { useState, useEffect } from 'react';
-// import { fb } from '../../../service';
-// import { useAuth } from '../../../hooks';
-// import {
-//   Button,
-//   Row,
-//   Col,
-//   Card,
-//   Container,
-//   Carousel,
-//   CarouselItem,
-// } from 'react-bootstrap';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faComment, faLaugh } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from 'react';
+import { fb } from '../../../service';
+import {
+  Button,
+  Row,
+  Col,
+  Card,
+  Container,
+  Modal,
+  Alert,
+} from 'react-bootstrap';
+import NavbarPage from '../Navbar/indexPage';
+import Sidebar from '../SideBar/index';
+import { Link } from 'react-router-dom';
 
-// // const db = app.firestore();
+import { useAuth } from '../../../hooks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
+import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
-// export default function CommonNewsFeeds() {
-//   const { authUser } = useAuth();
-//   const [users, setUsers] = useState([]);
-//   const [chat, setChatUsers] = useState([]);
+export default function AdminPower() {
+  const { authUser } = useAuth();
+  const [usersAdmin, setUsers] = React.useState([]);
+  const [chat, setChatUsers] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-//   useEffect(() => {
-//     const fetchUsers = async () => {
-//       const usersCollection = await fb.firestore
-//         .collection('users')
-//         .orderBy('createdAt', 'desc')
-//         .get();
-//       setUsers(
-//         usersCollection.docs.map(doc => {
-//           return doc.data();
-//         }),
-//       );
-//     };
-//     fetchUsers();
-//   }, []);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const usersCollection = await fb.firestore.collection('chatUsers').get();
-//       setChatUsers(
-//         usersCollection.docs.map(doc => ({ ...doc.data(), id: doc.id })),
-//       );
-//     };
-//     fetchData();
-//   }, []);
+  function openModal() {
+    setOpen(true);
+  }
 
-//   const logedUser = chat.filter(obj => {
-//     return obj.signupUserId === authUser.uid;
-//   });
+  function closeModal() {
+    setOpen(false);
+  }
 
-//   return (
-//     <>
-//       <Card style={{}}>
-//         <Card.Body>
-//           <Card.Title
-//             className="d-flex align-items-center justify-content-center"
-//             style={{ padding: '10px' }}
-//           >
-//             <strong> HOME News Feeds</strong>
-//           </Card.Title>
-//           <br />
-//           <br />
+  useEffect(() => {
+    const fetchData = async () => {
+      const usersCollection = await fb.firestore
+        .collection('users')
+        .orderBy('createdAt', 'desc')
+        .get();
+      setUsers(
+        usersCollection.docs.map(doc => ({ ...doc.data(), id: doc.id })),
+      );
+    };
+    fetchData();
+  }, []);
 
-//           {users.map(user => (
-//             <Container className="grid" style={{ padding: '10px' }}>
-//               <Card
-//                 style={{
-//                   padding: '10px',
-//                   maxHeight: '40rem',
-//                   maxWidth: '30rem',
-//                 }}
-//               >
-//                 <Card.Img src={user.avatar} alt={user.name} />
+  // const personalUser = usersP.filter(obj => {
+  //   return obj.userId === authUser.uid;
+  // });
 
-//                 {logedUser.map(user1 => (
-//                   <Card.Title
-//                     style={{
-//                       marginTop: '25px',
-//                       fontSize: '30px',
-//                       fontWeight: 'bold',
-//                     }}
-//                   >
-//                     {user1.userName}
-//                   </Card.Title>
-//                 ))}
-//                 <Card
-//                   className="overflow-auto"
-//                   style={{
-//                     padding: '10px',
-//                     marginTop: '1rem',
-//                     marginBottom: '1rem',
-//                   }}
-//                 >
-//                   <Card.Text style={{ padding: '10px' }}>{user.name}</Card.Text>{' '}
-//                 </Card>
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const usersCollection = await fb.firestore.collection('chatUsers').get();
+  //     setChatUsers(
+  //       usersCollection.docs.map(doc => ({ ...doc.data(), id: doc.id })),
+  //     );
+  //   };
+  //   fetchData();
+  // }, []);
 
-//                 <Card style={{ padding: '10px' }}>
-//                   <Row>
-//                     <Col>
-//                       <Button
-//                         className="w-100 "
-//                         variant="outline-success"
-//                         size="sm"
-//                       >
-//                         <FontAwesomeIcon icon={faLaugh} />
-//                       </Button>
-//                     </Col>
+  // const nameFilter = chat.filter(objN => {
+  //   return objN.signupUserId === authUser.uid;
+  // });
 
-//                     <Col>
-//                       <Button
-//                         className="w-100 "
-//                         variant="outline-success"
-//                         size="sm"
-//                       >
-//                         <FontAwesomeIcon icon={faComment} />
-//                       </Button>
-//                     </Col>
-//                   </Row>
-//                 </Card>
-//               </Card>
-//             </Container>
-//           ))}
-//         </Card.Body>
-//       </Card>
-//     </>
-//   );
-// }
+  return (
+    <>
+      {/* <NavbarPage toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} /> */}
+      <Card.Title
+        className="d-flex align-items-center justify-content-center "
+        style={{
+          position: 'sticky',
+          color: '#101522',
+          marginTop: '25px',
+          marginBottom: '35px',
+          fontSize: '30px',
+          fontWeight: 'bold',
+        }}
+      >
+        All Users All post
+      </Card.Title>
+      <Card
+        className="overflow-auto"
+        style={{ marginTop: '1rem', maxHeight: '60rem' }}
+      >
+        <Card.Body>
+          {usersAdmin.map(user => (
+            <Container
+              className="overflow-auto d-flex align-items-center justify-content-center "
+              style={{ padding: '10px', maxHeight: '60rem' }}
+            >
+              <Card
+                style={{
+                  padding: '10px',
+                  maxHeight: '55rem',
+                  maxWidth: '40rem',
+                }}
+              >
+                <Card.Img src={user.avatar} alt={user.name} />
+
+                <Card.Title
+                  style={{
+                    marginTop: '25px',
+                    fontSize: '30px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {user.creator}
+                </Card.Title>
+
+                <Card
+                  style={{
+                    minHeight: '70px',
+                    padding: '5px',
+                    marginTop: '0.5rem',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  {' '}
+                  <Alert variant="secondary" show={open} onHide={closeModal}>
+                    <Alert.Heading>Hey, nice to see you...</Alert.Heading>
+                    <hr />
+                    <Card.Link to="google.com" style={{ padding: '5px' }}>
+                      {user.locate}
+                    </Card.Link>
+                    <hr />
+                    <Button variant="secondary" onClick={closeModal}>
+                      Close
+                    </Button>
+                  </Alert>
+                  <Card.Text
+                    className="overflow-auto"
+                    style={{ padding: '5px', minHeight: '7rem' }}
+                  >
+                    {user.name}
+                  </Card.Text>
+                </Card>
+
+                <Card style={{ padding: '10px' }}>
+                  <Row>
+                    <Col>
+                      <Button
+                        className="w-100 "
+                        variant="outline-success"
+                        size="sm"
+                        // onClick={closeModal}
+                      >
+                        <FontAwesomeIcon icon={faLaugh} />
+                      </Button>
+                    </Col>
+
+                    <Col>
+                      <Button
+                        className="w-100 "
+                        onClick={openModal}
+                        variant="outline-success"
+                        size="sm"
+                      >
+                        <FontAwesomeIcon icon={faLink} />
+                      </Button>
+                    </Col>
+                    <Col>
+                      <DeleteBtn user={user} />
+                    </Col>
+                  </Row>
+                </Card>
+              </Card>
+
+              {/* <Modal show={open} onHide={closeModal}>
+                <Link to="google.com" style={{ padding: '5px' }}>
+                  {user.locate}
+                </Link>
+              </Modal> */}
+            </Container>
+          ))}
+        </Card.Body>
+      </Card>
+    </>
+  );
+}

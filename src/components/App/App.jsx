@@ -9,6 +9,7 @@ import User from "../../src copy/components/authentication/User"
 import ForgotPassword from "../../src copy/components/authentication/ForgotPassword"
 import VerifyEmail from "../../src copy/components/authentication/VerifyEmail"
 import SortGrp from "../../src copy/components/dataSortSection/SortGrp"
+import AdminPage from "../../src copy/components/Admin/AdminPage"
 // import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
 
 
@@ -48,7 +49,7 @@ export const App = () => {
         <Route path="/" component={Home} exact/>
         <Route path="/user" component={User} />
         <Route path="/newsfeed" component={SortGrp}/>
-        {/* <Route path="/admin" component={SortGrp}/> */}
+        <Route path="/admin" component={AdminPage}/>
 
         <div className="app1">
           <Route path="/chat" component={Chat}  />
