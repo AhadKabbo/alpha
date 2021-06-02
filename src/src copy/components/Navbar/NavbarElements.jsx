@@ -191,6 +191,7 @@ export const NavBtnLinkI = styled(LinkR)`
   font-size: 14px;
   font-variant:small-caps;
   font-style: oblique;
+  font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;
@@ -202,5 +203,28 @@ export const NavBtnLinkI = styled(LinkR)`
     text-decoration: none;
     background: #1CC7D9;
     color: #040404;
+  }
+`
+export const NavBtnLinkL = styled(LinkR)`
+  /* border-radius: 80px;
+  background: #f4f4fc; */
+  /* white-space: nowrap; */
+  /* padding: 5px 12px; */
+  color: #DC5B21;
+  font-size: 15px;
+  font-variant:small-caps;
+  font-style: oblique;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background: none;
+    color: #1CC7D9;
   }
 `

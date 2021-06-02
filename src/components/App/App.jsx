@@ -48,6 +48,7 @@ export const App = () => {
         <Route path="/" component={Home} exact/>
         <Route path="/user" component={User} />
         <Route path="/newsfeed" component={SortGrp}/>
+        {/* <Route path="/admin" component={SortGrp}/> */}
 
         <div className="app1">
           <Route path="/chat" component={Chat}  />

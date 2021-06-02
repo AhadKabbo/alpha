@@ -1,9 +1,9 @@
 import React from 'react'
-// import { Button } from '../ButtonElements'
+import { Button } from '../ButtonElements'
 import { ButtonR } from '../ButtonElements'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, ImgWrap, Img } from './InfoElements'
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, BtnWrap2, ImgWrap, Img } from './InfoElements'
 
-const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, alt, img, primary, dark, dark2 }) => {
+const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, buttonLabel2, alt, img, primary, dark, dark2 }) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -15,7 +15,7 @@ const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, de
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonR to='/signup'
+                  <ButtonR to='/newsfeed'
                   smooth={true}
                   duration={500}
                   spy={true}
@@ -27,6 +27,21 @@ const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, de
                   >{buttonLabel}
                   </ButtonR>
                 </BtnWrap>
+
+                <BtnWrap2>
+                  <ButtonR to='/newsfeed'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                  primary={primary ? 1 : 0}
+                  dark={dark ? 1 : 0}
+                  dark2={dark2 ? 1 : 0}
+                  >{buttonLabel2}
+                  </ButtonR>
+                </BtnWrap2>
+
               </TextWrapper>
             </Column1>
             <Column2>

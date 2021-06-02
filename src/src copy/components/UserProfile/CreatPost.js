@@ -113,7 +113,7 @@ export default function CreatPost() {
                     rows={1}
                     type="url"
                     name="inputUrl"
-                    placeholder="write somthing...."
+                    placeholder="https://..."
                   />
                 </Form.Group>
 

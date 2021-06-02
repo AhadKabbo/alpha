@@ -1,19 +1,19 @@
 export const homeObjOne = {
   id: 'about',
-  lightBg: false,
-  lightText: true,
-  lighttextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lighttextDesc: false,
   topLine: 'Popular Digital প্রচার Services',
   headline: 'Unlimited Digital Marketing at a Limited fees',
   description: 'Get access to our exclusive app that allows you to bargaining with multiple marketers and find your best mate.',
-  buttonLabel: 'facebook shop marketing',
-  buttonLabel2: 'instagram profile ',
-  imgStart: false,
+  buttonLabel: 'Find Influacer',
+  buttonLabel2: 'Become Influancer',
+  imgStart: true,
   img: '/img/s-1a.svg',
   alt: 'popular',
-  dark: true,
-  primary: true,
-  darkText: false
+  dark: false,
+  primary: false,
+  darkText: true
 };
 export const homeObjProfile = {
   id: 'about',
@@ -31,19 +31,19 @@ export const commonFeeds = {
 };
 export const homeObjTwo = {
   id: 'discover',
-  lightBg: true,
-  lightText: false,
-  lighttextDesc: false,
+  lightBg: false,
+  lightText: true,
+  lighttextDesc: true,
   topLine: 'Unlimited Access',
   headline: 'Login and Find Our community and Blog',
   description: 'Get access to our exclusive app that allows you to build your own Blog and meet others Community whitout getting charged any fees.',
   buttonLabel: 'Learn More',
-  imgStart: true,
+  imgStart: false,
   img: '/img/s-2a.svg',
   alt: 'community',
-  dark: false,
-  primary: false,
-  darkText: true
+  dark: true,
+  primary: true,
+  darkText: false
 };
 
 export const homeObjThree = {

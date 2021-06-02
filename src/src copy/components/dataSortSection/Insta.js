@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { fb } from '../../../service';
-import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+import { Button, Row, Col, Card, Container, Alert } from 'react-bootstrap';
 import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
 export default function Insta() {
   const { authUser } = useAuth();
   const [usersF, setUsers] = React.useState([]);
   const [chat, setChatUsers] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  function openModal() {
+    setOpen(true);
+  }
+
+  function closeModal() {
+    setOpen(false);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,13 +48,8 @@ export default function Insta() {
   // }, []);
 
   // const nameFilter = chat.filter(obj => {
-  //   return obj.signupUserId === instaUsers.map(user1 => user1.userId);
+  //   return obj.signupUserId === authUser.uid;
   // });
-
-  // instaUsers.map(user1 => (
-  //     {user1.userId}
-
-  // ))
 
   return (
     <>
@@ -67,7 +71,7 @@ export default function Insta() {
         style={{ marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
-          {/* <strong>Instagram Promotion</strong>
+          {/* <strong>Facebook Promotion</strong>
           <br />
           <br /> */}
           {instaUsers.map(user => (
@@ -83,6 +87,25 @@ export default function Insta() {
                 }}
               >
                 <Card.Img src={user.avatar} alt={user.name} />
+
+                <Alert
+                  style={{
+                    marginTop: '10px',
+                  }}
+                  variant="dark"
+                  show={open}
+                  onHide={closeModal}
+                >
+                  <Alert.Heading>Hey, nice to see you...</Alert.Heading>
+                  <hr />
+                  <Card.Link to="google.com" style={{ padding: '5px' }}>
+                    {user.locate}
+                  </Card.Link>
+                  <hr />
+                  <Button variant="secondary" onClick={closeModal}>
+                    Close
+                  </Button>
+                </Alert>
 
                 <Card.Title
                   style={{
@@ -125,10 +148,11 @@ export default function Insta() {
                     <Col>
                       <Button
                         className="w-100 "
+                        onClick={openModal}
                         variant="outline-success"
                         size="sm"
                       >
-                        <FontAwesomeIcon icon={faComment} />
+                        <FontAwesomeIcon icon={faLink} />
                       </Button>
                     </Col>
                   </Row>

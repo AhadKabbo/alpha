@@ -20,7 +20,7 @@ export const ChatToolbar = () => {
 
         <div className="add-user-icon">
           <Icon
-            color="grey"
+            // color="#2ba7b4"
             name="user plus"
             onClick={() => setSearching(true)}
           />

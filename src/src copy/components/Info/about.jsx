@@ -16,7 +16,7 @@ const Info2 = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, d
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonR to='/newsfeed'
+                  <ButtonR to='/sucess-stories'
                   smooth={true}
                   duration={500}
                   spy={true}

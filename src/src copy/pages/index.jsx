@@ -11,7 +11,7 @@ import { useAuth } from "../../hooks"
 import Navbar from '../components/Navbar'
 import Services from '../components/Services';
 import Sidebar from '../components/SideBar'
-import CommonNewsFeeds from '../components/CommonNewsFeed/CommonNewsFeeds';
+import CommonNewsFeeds from '../components/Admin/AdminPower';
 
 const Home = () => {
   const { authUser } = useAuth();
@@ -26,13 +26,13 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle}/>
       <Hero />
-      <Info2 {...homeObjOne}/>
-      <Info {...homeObjTwo}/>
+      <Info2 {...homeObjTwo }/>
+      <Info {...homeObjOne}/>
       <Services />
-
-      {  authUser ? (<CommonNewsFeeds {...commonFeeds}/> )    :  (
       <Info {...homeObjThree}/>
-      )}
+      {/* {  authUser ? (<CommonNewsFeeds {...commonFeeds}/> )    :  (
+      <Info {...homeObjThree}/>
+      )} */}
       <Footer />
     </>
   )

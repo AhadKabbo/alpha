@@ -76,14 +76,33 @@ export const Chat = () => {
               <ChatInput />
             </div>
           ) : (
-            <div className="no-chat-selected">
+            <div className="no-chat">
               <img
-                src="/img/pointLeft.png"
+                src="/img/chat.svg"
                 className="point-left"
                 alt="point-left"
               />
+              <div className="point-left-text">
               Select A Chat
+              </div>
             </div>
+
+
+            // <div className="no-chat-selected">
+            //   {/* <img
+            //     src="/img/pointLeft.png"
+            //     className="point-left"
+            //     alt="point-left"
+            //   /> */}
+            //   <img  style={{ minHeight: '20rem',
+            //       minWidth: '5rem', }}
+            //     src="/img/chat.svg"
+            //     className="point-left"
+            //     alt="point-left"
+            //   />
+            //   Select A Chat
+            // </div>
+
           )}
         </div>
       </div>
