@@ -92,3 +92,8 @@ export const Img = styled.img`
   margin: 0 0 10px 0;
   padding-right: 0;
 `;
+export const ImgLogo = styled.img`
+  width: 60%;
+  /* margin: 0 0 10px 0; */
+  /* padding-right: 1px; */
+`;

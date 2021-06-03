@@ -2,13 +2,15 @@ import React, {useState, useEffect} from 'react'
 import { FaBars, FaNewspaper, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { CgProfile } from 'react-icons/cg'
 import {IconContext} from 'react-icons/lib'
-import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavLinks, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI, NavBtnLinkL } from './NavbarElements'
+import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavMenuB, NavLinks, NavItem, NavLogoNew, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI, NavBtnLinkL } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
 import { MdChatBubble } from 'react-icons/md';
+// import {img} from "../Info/image/pointLeft.png"
+import {  ImgLogo } from '../Info/InfoElements'
 
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, alt, img}) => {
   // const {currentUser } = useAuth()
   const { authUser } = useAuth();
   
@@ -34,7 +36,9 @@ const Navbar = ({ toggle }) => {
     <IconContext.Provider value={{ color: '#f4f4fc'}}>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo to='/' onClick={toggleHome}>Digital প্রচার </NavLogo>
+        <NavLogoNew to='/' onClick={toggleHome}>
+          <ImgLogo src={img} alt={alt} /> 
+        </NavLogoNew>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
@@ -61,21 +65,26 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           
+          <NavMenuB>
           {
             authUser ? (
 
           
               <> 
+            
               <NavBtnI>
-                <NavBtnLinkI to='/User'><CgProfile style={{ color: '#DC5B21', marginBottom: '3px' }}/>  Profile</NavBtnLinkI>
+                <NavBtnLinkI to='/User'><CgProfile style={{ color: '#040404', marginBottom: '3px' }}/>  Profile
+                </NavBtnLinkI>
               </NavBtnI>
     
               <NavBtnI>
-              <NavBtnLinkI to='/chat'> <MdChatBubble style={{ color: '#DC5B21', marginBottom: '3px' }}/>  My Chat</NavBtnLinkI>
+              <NavBtnLinkI to='/chat'> <MdChatBubble style={{ color: '#040404', marginBottom: '3px' }}/>  My Chat
+              </NavBtnLinkI>
               </NavBtnI>
 
               <NavBtnI>
-                <NavBtnLinkI to='/newsfeed'><FaNewspaper style={{ color: '#DC5B21', marginBottom: '3px' }}/>  NewsFeed</NavBtnLinkI>
+                <NavBtnLinkI to='/newsfeed'><FaNewspaper style={{ color: '#040404', marginBottom: '3px' }}/>  NewsFeed
+                </NavBtnLinkI>
               </NavBtnI>
               </>
           )    :  (
@@ -86,12 +95,13 @@ const Navbar = ({ toggle }) => {
               </NavBtnI>
               
               <NavBtnI>
-                <NavBtnLinkI to='/signup'><FaUserPlus style={{ color: '#DC5B21', marginBottom: '3px' }}/>   SignUp</NavBtnLinkI>
+                <NavBtnLinkI to='/signup'><FaUserPlus style={{ color: '#040404', marginBottom: '3px' }}/>   SignUp
+                </NavBtnLinkI>
               </NavBtnI>
-            
-            
+              
               </>
             ) }
+            </NavMenuB>
         </NavbarContainer>
       </Nav>
     </IconContext.Provider>

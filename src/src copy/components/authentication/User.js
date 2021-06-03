@@ -3,7 +3,7 @@ import Profile from '../UserProfile/Profile';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
 import Sidebar from '../SideBar/index';
-import { homeObjProfile } from '../Info/Data';
+import { homeObjProfile, navlogo } from '../Info/Data';
 import { Container, Col, Row } from 'react-bootstrap';
 import PersonalFeeds from '../UserProfile/PersonalFeeds';
 import CreatPost from '../UserProfile/CreatPost';
@@ -17,7 +17,7 @@ export default function User() {
 
   return (
     <>
-      <NavbarPage toggle={toggle} />
+      <NavbarPage toggle={toggle} {...navlogo} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
 
       <Container fluid style={{ marginTop: '6rem' }}>
@@ -37,7 +37,7 @@ export default function User() {
         </Row>
       </Container>
       {/* <Ap/> */}
-      <Footer />
+      <Footer {...navlogo} />
     </>
   );
 }

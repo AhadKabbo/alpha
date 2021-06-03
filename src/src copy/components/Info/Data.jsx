@@ -23,6 +23,14 @@ export const homeObjProfile = {
 
 };
 
+export const navlogo = {
+ 
+  img: '/img/ProChar.svg',
+  alt: 'navlogo',
+
+};
+
+
 export const commonFeeds = {
   id: 'about',
   lightBg: false,

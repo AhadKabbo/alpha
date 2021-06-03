@@ -28,7 +28,7 @@ const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, de
                   </ButtonR>
                 </BtnWrap>
 
-                <BtnWrap2>
+                {/* <BtnWrap2>
                   <ButtonR to='/newsfeed'
                   smooth={true}
                   duration={500}
@@ -40,7 +40,7 @@ const Info = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, de
                   dark2={dark2 ? 1 : 0}
                   >{buttonLabel2}
                   </ButtonR>
-                </BtnWrap2>
+                </BtnWrap2> */}
 
               </TextWrapper>
             </Column1>

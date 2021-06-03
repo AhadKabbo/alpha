@@ -1,9 +1,9 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { FooterContainer, FooterWrap, FooterLinkWrapper, FooterLinkItems, FooterLinkContainer, FooterLinkTitle, FooterLink, SocialIconLink, SocialIcons, SocialLogo, SocialMedia, SocialMediaWrap, WebsiteRights } from './FooterElements'
+import { FooterContainer, FooterWrap, FooterLinkWrapper, FooterLinkItems, FooterLinkContainer, FooterLinkTitle, FooterLink, SocialIconLink, SocialIcons, SocialLogo, NavLogoNew, SocialMedia, SocialMediaWrap, WebsiteRights } from './FooterElements'
 import { animateScroll as scroll } from 'react-scroll';
-
-const Footer = () => {
+import {  ImgLogo } from '../Info/InfoElements'
+const Footer = ({ alt, img}) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   }
@@ -19,7 +19,6 @@ const Footer = () => {
                 <FooterLink to='/'>Testimonials</FooterLink>
                 <FooterLink to='/'>Carrers</FooterLink>
                 <FooterLink to='/'>Investor</FooterLink>
-                <FooterLink to='/'>Terms of Service</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Contact Us</FooterLinkTitle>
@@ -49,9 +48,14 @@ const Footer = () => {
         </FooterLinkContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/' onClick={toggleHome}>
+            {/* <SocialLogo to='/' onClick={toggleHome}>
             Digital প্রচার
-            </SocialLogo>
+            </SocialLogo> */}
+
+<NavLogoNew to='/' onClick={toggleHome}>
+          <ImgLogo src={img} alt={alt} /> 
+        </NavLogoNew>
+
             <WebsiteRights>Digital প্রচার © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
             <SocialIcons>
               <SocialIconLink href='//www.facebook.com/photo?fbid=1811680892317516&set=a.101196766699279' target='_blank' arial-label='Facebook'>
@@ -77,4 +81,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

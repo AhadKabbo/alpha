@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { FaBars, FaNewspaper, FaSignInAlt } from "react-icons/fa";
 import { CgProfile } from 'react-icons/cg'
 import {IconContext} from 'react-icons/lib'
-import { NavP, NavbarContainer, MobileIcon, NavMenu, NavMenuB, NavLinksP, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI, NavLogoNew } from './NavbarElements'
+import { NavP, NavbarContainerChat, MobileIcon, NavMenu, NavMenuBChat, NavLinksP, NavItem, NavBtn, NavBtnLink, NavBtnI, NavBtnLinkI, NavLogoNew } from './NavbarElements'
 import { animateScroll as scroll } from 'react-scroll';
 import { useAuth } from "../../../hooks"
 import { MdChatBubble } from 'react-icons/md';
@@ -35,8 +35,8 @@ const NavbarPage = ({ toggle, alt, img }) => {
     <Route path="/" component={Info2} />
     </Router> */}
     <IconContext.Provider value={{ color: '#f4f4fc'}}>
-      <NavP scrollNav={scrollNav}>
-        <NavbarContainer>
+      <NavP  scrollNav={scrollNav}>
+        <NavbarContainerChat>
         <NavLogoNew to='/' onClick={toggleHome}><ImgLogo src={img} alt={alt} /> </NavLogoNew>
           <MobileIcon onClick={toggle}>
             <FaBars />
@@ -65,7 +65,7 @@ const NavbarPage = ({ toggle, alt, img }) => {
             </NavItem>
           </NavMenu>
 
-          <NavMenuB>
+          <NavMenuBChat>
           {
             authUser  ? (
 
@@ -87,8 +87,8 @@ const NavbarPage = ({ toggle, alt, img }) => {
                 <NavBtnLinkI to='/login'><FaSignInAlt style={{ color: '#040404', marginBottom: '3px' }}/>   LogIn</NavBtnLinkI>
               </NavBtnI>
             ) }
-            </NavMenuB>
-        </NavbarContainer>
+            </NavMenuBChat>
+        </NavbarContainerChat>
       </NavP>
     </IconContext.Provider>
     </>

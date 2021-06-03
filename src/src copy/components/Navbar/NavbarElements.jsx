@@ -43,8 +43,20 @@ export const NavbarContainer = styled.div`
   height: 80px;
   z-index: 1;
   width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
+  padding: 0 20px;
+  max-width: 1150px;
+`
+
+
+export const NavbarContainerChat = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 35px;
+  max-width: 1250px;
+  box-shadow: 0px 2px 3px #1cc7d9;
 `
 export const NavLogo = styled(LinkR) `
   color: #1CC7D9;
@@ -64,6 +76,18 @@ export const NavLogo = styled(LinkR) `
     color: #1CC7D9;
   }
 `
+export const NavLogoNew = styled(LinkR) `
+  justify-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: none;
+  }
+`
+
 export const MobileIcon = styled.div`
   display: none;
   
@@ -84,6 +108,33 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   margin-right: -22px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    
+  }
+  
+`
+
+export const NavMenuB = styled.ul`
+  display:flex;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -52px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    
+  }
+  
+`
+export const NavMenuBChat = styled.ul`
+  display:flex;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  margin-right: 51px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -183,11 +234,14 @@ export const NavBtnLink = styled(LinkR)`
 
 
 export const NavBtnLinkI = styled(LinkR)`
+margin-right: 22px;
   border-radius: 80px;
-  background: #f4f4fc;
+  /* background: #f4f4fc; */
+  background: #1CC7D9;
   white-space: nowrap;
   padding: 5px 12px;
-  color: #DC5B21;
+  /* color: #DC5B21; */
+  color: #040404;
   font-size: 14px;
   font-variant:small-caps;
   font-style: oblique;
@@ -201,8 +255,8 @@ export const NavBtnLinkI = styled(LinkR)`
   &:hover {
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    background: #1CC7D9;
-    color: #040404;
+    background: #f4f4fc;
+    color: #DC5B21;
   }
 `
 export const NavBtnLinkL = styled(LinkR)`

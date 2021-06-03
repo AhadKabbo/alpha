@@ -118,7 +118,7 @@ code {
 .chat-container {
   color: #e4e4eb;
   display: flex;
-  flex: 1;
+  flex: 2;
   height: 100%;
   max-width: 100%;
   min-width: 1200px;
@@ -127,10 +127,31 @@ code {
   .chat-container {
     color: #e4e4eb;
     display: flex;
-    flex: 1;
+    flex: 2;
     height: 100%;
     max-width: 100%;
     min-width: 375px;
+  }
+}
+
+.Nav-container {
+  display: flex;
+  flex: 1;
+
+  max-width: 100%;
+  min-width: 1200px;
+  margin-bottom: -17rem;
+}
+@media screen and (max-width: 600px) {
+  .Nav-container {
+    margin-top: -155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    height: 100%;
+    min-width: 1600px;
+    margin-bottom: -9rem;
   }
 }
 .left-rail {

@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftRail, ChatToolbar, ChatInput, MessageList } from 'components';
+import Sidebar from '../../src copy/components/SideBar'
+import NavbarPage from '../../src copy/components/Navbar/indexPageChat'
+import { navlogo } from '../../src copy/components/Info/Data';
 
 export const Chat = () => {
   const {
@@ -12,6 +15,12 @@ export const Chat = () => {
     selectChatClick,
     setSelectedChat,
   } = useChat();
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () =>{
+    setIsOpen(!isOpen);
+  }
+
 
   useEffect(() => {
     console.log('My Chats: ', myChats);
@@ -23,6 +32,10 @@ export const Chat = () => {
 
   return (
     <>
+    {/* <div className="Nav-container">
+    <NavbarPage toggle={toggle} {...navlogo }/>
+              <Sidebar isOpen={isOpen} toggle={toggle} /> 
+              </div> */}
       {!!chatConfig && (
         <ChatEngine
           hideUI={true}
@@ -65,8 +78,10 @@ export const Chat = () => {
           }}
         />
       )}
-
+       
       <div className="chat-container">
+
+      
         <LeftRail />
         <div className="current-chat">
           {selectedChat ? (

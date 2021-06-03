@@ -43,7 +43,14 @@ const Profile = ({ alt, img }) => {
   return (
     <>
       {nameFilter.map(user => (
-        <Card style={{ padding: '3px', maxHeight: '30rem', maxWidth: '20rem' }}>
+        <Card
+          style={{
+            marginTop: '3rem',
+            padding: '3px',
+            maxHeight: '30rem',
+            maxWidth: '20rem',
+          }}
+        >
           <Card.Body>
             <Card
               style={{

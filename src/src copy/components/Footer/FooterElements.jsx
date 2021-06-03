@@ -103,3 +103,14 @@ export const SocialIconLink = styled.a`
   color: #1CC7D9;
   font-size: 24px;
 `
+export const NavLogoNew = styled(Link) `
+  justify-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: none;
+  }
+`

@@ -6,6 +6,7 @@ import Sidebar from '../SideBar';
 import Fb from './Fb';
 import Insta from './Insta';
 import Youtube from './Youtube';
+import { navlogo } from '../Info/Data';
 
 const SortGrp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +17,15 @@ const SortGrp = () => {
 
   return (
     <>
-      <NavbarPage toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavbarPage toggle={toggle} {...navlogo} />
       <Container fluid style={{ marginTop: '6rem' }}>
         <Fb />
         <Insta />
         <Youtube />
       </Container>
 
-      <Footer />
+      <Footer {...navlogo} />
     </>
   );
 };
