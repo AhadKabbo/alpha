@@ -1,41 +1,40 @@
-import styled from 'styled-components'
-import { Link as LinkR } from 'react-router-dom'
-import { Link as LinkS } from 'react-scroll'
-
+import styled from 'styled-components';
+import { Link as LinkR } from 'react-router-dom';
+import { Link as LinkS } from 'react-scroll';
 
 export const NavP = styled.nav`
-  background: ${({scrollNav}) => (scrollNav ? '#101522' : '#101522')};
+  background: ${({ scrollNav }) => (scrollNav ? '#101522' : '#101522')};
   height: 80px;
   margin-top: -80px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
-  top:0;
-  z-index:10;
+  top: 0;
+  z-index: 10;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
-`
+`;
 
 export const Nav = styled.nav`
-  background: ${({scrollNav}) => (scrollNav ? '#101522' : 'transparent')};
+  background: ${({ scrollNav }) => (scrollNav ? '#101522' : 'transparent')};
   height: 80px;
   margin-top: -80px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
-  top:0;
-  z-index:10;
+  top: 0;
+  z-index: 10;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
-`
+`;
 
 export const NavbarContainer = styled.div`
   display: flex;
@@ -45,8 +44,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 20px;
   max-width: 1150px;
-`
-
+`;
 
 export const NavbarContainerChat = styled.div`
   display: flex;
@@ -57,9 +55,9 @@ export const NavbarContainerChat = styled.div`
   padding: 0 35px;
   max-width: 1250px;
   box-shadow: 0px 2px 3px #1cc7d9;
-`
-export const NavLogo = styled(LinkR) `
-  color: #1CC7D9;
+`;
+export const NavLogo = styled(LinkR)`
+  color: #1cc7d9;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -73,10 +71,10 @@ export const NavLogo = styled(LinkR) `
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
-export const NavLogoNew = styled(LinkR) `
+`;
+export const NavLogoNew = styled(LinkR)`
   justify-self: flex-start;
   cursor: pointer;
   display: flex;
@@ -86,11 +84,11 @@ export const NavLogoNew = styled(LinkR) `
     transition: all 0.2s ease-in-out;
     background: none;
   }
-`
+`;
 
 export const MobileIcon = styled.div`
   display: none;
-  
+
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -101,9 +99,9 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     color: #f4f4fc;
   }
-`
+`;
 export const NavMenu = styled.ul`
-  display:flex;
+  display: flex;
   justify-content: center;
   list-style: none;
   text-align: center;
@@ -111,13 +109,11 @@ export const NavMenu = styled.ul`
 
   @media screen and (max-width: 768px) {
     display: none;
-    
   }
-  
-`
+`;
 
 export const NavMenuB = styled.ul`
-  display:flex;
+  display: flex;
   justify-content: center;
   list-style: none;
   text-align: center;
@@ -125,12 +121,10 @@ export const NavMenuB = styled.ul`
 
   @media screen and (max-width: 768px) {
     display: none;
-    
   }
-  
-`
+`;
 export const NavMenuBChat = styled.ul`
-  display:flex;
+  display: flex;
   justify-content: center;
   list-style: none;
   text-align: center;
@@ -138,14 +132,11 @@ export const NavMenuBChat = styled.ul`
 
   @media screen and (max-width: 768px) {
     display: none;
-    
   }
-  
-`
+`;
 export const NavItem = styled.li`
   height: 80px;
-  
-`
+`;
 export const NavLinks = styled(LinkS)`
   color: #f4f4fc;
   display: flex;
@@ -160,14 +151,13 @@ export const NavLinks = styled(LinkS)`
     transition: 0.3s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
-    }
+    color: #1cc7d9;
+  }
 
   &.active {
-    border-bottom: 3px solid #1CC7D9;
-    
+    border-bottom: 3px solid #1cc7d9;
   }
-`
+`;
 export const NavLinksP = styled(LinkR)`
   color: #f4f4fc;
   display: flex;
@@ -182,15 +172,13 @@ export const NavLinksP = styled(LinkR)`
     transition: 0.3s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
-    
-    }
+    color: #1cc7d9;
+  }
 
   &.active {
-    border-bottom: 3px solid #1CC7D9;
-    
+    border-bottom: 3px solid #1cc7d9;
   }
-`
+`;
 
 export const NavBtn = styled.nav`
   display: flex;
@@ -199,25 +187,24 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;
 export const NavBtnI = styled.nav`
   display: flex;
   align-items: center;
-  
 
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;
-  background: #1CC7D9;
+  background: #1cc7d9;
   white-space: nowrap;
   padding: 10px 22px;
   color: #040404;
   font-size: 16px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   outline: none;
   border: none;
   cursor: pointer;
@@ -230,20 +217,19 @@ export const NavBtnLink = styled(LinkR)`
     background: #f4f4fc;
     color: #040404;
   }
-`
-
+`;
 
 export const NavBtnLinkI = styled(LinkR)`
-margin-right: 22px;
+  margin-right: 22px;
   border-radius: 80px;
   /* background: #f4f4fc; */
-  background: #1CC7D9;
+  background: #1cc7d9;
   white-space: nowrap;
   padding: 5px 12px;
   /* color: #DC5B21; */
   color: #040404;
   font-size: 14px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   font-style: oblique;
   font-weight: bold;
   outline: none;
@@ -256,17 +242,19 @@ margin-right: 22px;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: #f4f4fc;
-    color: #DC5B21;
+    color: #dc5b21;
   }
-`
+`;
 export const NavBtnLinkL = styled(LinkR)`
   /* border-radius: 80px;
   background: #f4f4fc; */
   /* white-space: nowrap; */
   /* padding: 5px 12px; */
-  color: #DC5B21;
+  margin-right: 62px;
+  /* padding: 5px 12px; */
+  color: #dc5b21;
   font-size: 15px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   font-style: oblique;
   font-weight: bold;
   outline: none;
@@ -279,6 +267,6 @@ export const NavBtnLinkL = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
+`;
