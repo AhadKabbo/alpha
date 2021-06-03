@@ -5,13 +5,13 @@ import { useAuth, useResolved } from 'hooks';
 import { Login, Signup, Chat } from 'components';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../src copy/pages';
-import User from "../../src copy/components/authentication/User"
-import ForgotPassword from "../../src copy/components/authentication/ForgotPassword"
-import VerifyEmail from "../../src copy/components/authentication/VerifyEmail"
-import SortGrp from "../../src copy/components/dataSortSection/SortGrp"
-import AdminPage from "../../src copy/components/Admin/AdminPage"
+import User from '../../src copy/components/authentication/User';
+import ForgotPassword from '../../src copy/components/authentication/ForgotPassword';
+import VerifyEmail from '../../src copy/components/authentication/VerifyEmail';
+import SortGrp from '../../src copy/components/dataSortSection/SortGrp';
+import AdminPage from '../../src copy/components/Admin/AdminPage';
+import UnderDevlopment from 'src copy/components/UnderDevlopment';
 // import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
-
 
 export const App = () => {
   // const history = useHistory();
@@ -32,52 +32,44 @@ export const App = () => {
   // useEffect(() => {
   //   if (authResolved) {
   //     history.push(!!authUser ? '/' : '/login');
-      
+
   //   }
   // }, [authResolved, authUser, history]);
 
-
-  
   return (
     <>
-    <ChatProvider authUser={authUser}>
+      <ChatProvider authUser={authUser}>
+        {authUser ? (
+          <Route>
+            <Switch>
+              {/* Basic page  */}
+              <Route path="/" component={Home} exact />
+              <Route path="/under-devlopment" component={UnderDevlopment} />
+              <Route path="/user" component={User} />
+              <Route path="/newsfeed" component={SortGrp} />
+              <Route path="/admin" component={AdminPage} />
 
- {   authUser  ?(
-      <Route>
-        <Switch>
-                          {/* Basic page  */}
-        <Route path="/" component={Home} exact/>
-        <Route path="/user" component={User} />
-        <Route path="/newsfeed" component={SortGrp}/>
-        <Route path="/admin" component={AdminPage}/>
-
-        <div className="app1">
-          <Route path="/chat" component={Chat}  />
-          <Route path="/verify-email" component={VerifyEmail} /> 
-          </div>
-
-        </Switch>
-      </Route>
-      ) :(
-        <Route>
-        <Switch>
-
-          {/* Basic page  */}
-          <Route path="/" component={Home} exact/>
-        
-          <div className="app1">
-
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/forgot-password" component={ForgotPassword} /> 
-            
-            
-            </div>
-        </Switch>
-      </Route>
-      )}
-
-    </ChatProvider>
+              <div className="app1">
+                <Route path="/chat" component={Chat} />
+                <Route path="/verify-email" component={VerifyEmail} />
+              </div>
+            </Switch>
+          </Route>
+        ) : (
+          <Route>
+            <Switch>
+              {/* Basic page  */}
+              <Route path="/" component={Home} exact />
+              <Route path="/under-devlopment" component={UnderDevlopment} />
+              <div className="app1">
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/forgot-password" component={ForgotPassword} />
+              </div>
+            </Switch>
+          </Route>
+        )}
+      </ChatProvider>
     </>
   );
 };
