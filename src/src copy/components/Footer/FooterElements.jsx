@@ -47,7 +47,9 @@ export const FooterLinkItems = styled.div`
   }
 `;
 export const FooterLinkTitle = styled.h1`
-  font-size: 14px;
+  /* color: #1cc7d9; */
+  font-size: 16px;
+  font-weight: bold;
   margin-bottom: 16px;
 `;
 export const FooterLink = styled(Link)`

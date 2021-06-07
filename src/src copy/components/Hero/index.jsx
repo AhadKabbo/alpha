@@ -28,7 +28,7 @@ const Hero = () => {
       <HeroContent>
         <HeroH1>
           {' '}
-          <strong style={{ color: '#1cc7d9' }}>PhoChar</strong> Can Grow Your
+          <strong style={{ color: '#1cc7d9' }}>ProChar</strong> Can Grow Your
           Business Rapidly{' '}
         </HeroH1>
         <HeroP>

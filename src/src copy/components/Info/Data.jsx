@@ -4,7 +4,7 @@ export const homeObjOne = {
   lightText: false,
   lighttextDesc: false,
   topLine: 'Popular ProChar Services',
-  headline: 'Unlimited Digital Marketing at a Limited fees',
+  headline: 'Unlimited Digital Marketing at a Limited Cost',
   description:
     'Get access to our exclusive app that allows you to bargaining with multiple marketers and find your best mate.',
   buttonLabel: 'Find Influacer',
@@ -23,9 +23,9 @@ export const homeObjTwo = {
   lightText: true,
   lighttextDesc: true,
   topLine: 'Unlimited Access',
-  headline: 'Login and Find Our community and Blog',
+  headline: 'SignUp and Find Our community and Blog',
   description:
-    'Get access to our exclusive app that allows you to build your own Blog and meet others Community whitout getting charged any fees.',
+    'Get access to our exclusive app that allows you to build your own Blog and meet others Community whitout getting charged any Cost.',
   buttonLabel: 'Learn More',
   imgStart: false,
   img: '/img/s-2a.svg',
@@ -43,7 +43,7 @@ export const homeObjThree = {
   topLine: 'ProChar',
   headline: 'Creating an account is extremely easy',
   description:
-    'Our Priority, make it Simple and Understandable for you. Protect your Privacy is our goal.',
+    'Our Priority is, to make it Simple and Understandable for you. Protect your Privacy is our goal.',
   buttonLabel: 'Start Now',
   imgStart: false,
   img: '/img/s-3a.svg',
