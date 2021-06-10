@@ -7,6 +7,7 @@ import AdminPower from '../Admin/AdminPower';
 import NotAdmin from '../Admin/NotAdmin';
 import { useAuth, useResolved } from '../../../hooks';
 import { navlogo } from '../Info/Data';
+import ReportFeed from '../report handle/ReportFeed';
 
 const AdminPage = () => {
   const { authUser } = useAuth();
@@ -17,13 +18,18 @@ const AdminPage = () => {
     setIsOpen(!isOpen);
   };
 
+  // KHAN is the admin which Uid = 'cgdc16wzSkeLMWPSL200GOvGmqp1'
+
   return authResolved ? (
     <>
       <NavbarPage toggle={toggle} {...navlogo} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Container fluid style={{ marginTop: '6rem' }}>
         {authUser.uid === 'cgdc16wzSkeLMWPSL200GOvGmqp1' ? (
-          <AdminPower />
+          <>
+            <ReportFeed />
+            <AdminPower />
+          </>
         ) : (
           <NotAdmin />
         )}

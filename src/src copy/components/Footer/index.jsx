@@ -61,10 +61,10 @@ const Footer = ({ alt, img }) => {
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Having some issu</FooterLinkTitle>
-              <FooterLink to="/under-devlopment">Report a problem</FooterLink>
-              <FooterLink to="/under-devlopment">Page not working</FooterLink>
-              <FooterLink to="/under-devlopment">Fake people</FooterLink>
-              <FooterLink to="/under-devlopment">Money issu</FooterLink>
+              <FooterLink to="/report-problem">Report a problem</FooterLink>
+              <FooterLink to="/report-problem">Page not working</FooterLink>
+              <FooterLink to="/report-problem">Fake people</FooterLink>
+              <FooterLink to="/report-problem">Money issu</FooterLink>
             </FooterLinkItems>
           </FooterLinkWrapper>
         </FooterLinkContainer>
@@ -75,8 +75,7 @@ const Footer = ({ alt, img }) => {
             </NavLogoNew>
 
             <WebsiteRights>
-              <strong style={{ color: '#1cc7d9' }}>PhoChar </strong> ©
-              {new Date().getFullYear()} All rights reserved.
+              PhoChar ©{new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
             <SocialIcons>
               <SocialIconLink

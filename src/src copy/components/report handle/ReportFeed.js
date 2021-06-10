@@ -9,8 +9,6 @@ import {
   Modal,
   Alert,
 } from 'react-bootstrap';
-import NavbarPage from '../Navbar/indexPage';
-import Sidebar from '../SideBar/index';
 import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../../hooks';
@@ -18,16 +16,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
-export default function AdminPower() {
+export default function ReportFeed() {
   const { authUser } = useAuth();
-  const [usersAdmin, setUsers] = React.useState([]);
+  const [reports, setUsers] = React.useState([]);
   const [chat, setChatUsers] = useState([]);
   const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
 
   function openModal() {
     setOpen(true);
@@ -40,7 +33,7 @@ export default function AdminPower() {
   useEffect(() => {
     const fetchData = async () => {
       const usersCollection = await fb.firestore
-        .collection('users')
+        .collection('usersReports')
         .orderBy('createdAt', 'desc')
         .get();
       setUsers(
@@ -70,27 +63,25 @@ export default function AdminPower() {
 
   return (
     <>
-      {/* <NavbarPage toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} /> */}
       <Card.Title
         className="d-flex align-items-center justify-content-center "
         style={{
           position: 'sticky',
           color: '#101522',
-          marginTop: '20rem',
+          marginTop: '10rem',
           marginBottom: '35px',
           fontSize: '30px',
           fontWeight: 'bold',
         }}
       >
-        All Users All post
+        Report Handling
       </Card.Title>
       <Card
         className="overflow-auto"
         style={{ marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
-          {usersAdmin.map(user => (
+          {reports.map(user => (
             <Container
               className="overflow-auto d-flex align-items-center justify-content-center "
               style={{ padding: '10px', maxHeight: '60rem' }}
@@ -123,7 +114,7 @@ export default function AdminPower() {
                   }}
                 >
                   {' '}
-                  <Alert variant="secondary" show={open} onHide={closeModal}>
+                  {/* <Alert variant="secondary" show={open} onHide={closeModal}>
                     <Alert.Heading>Hey, nice to see you...</Alert.Heading>
                     <hr />
                     <Card.Link to="google.com" style={{ padding: '5px' }}>
@@ -133,7 +124,7 @@ export default function AdminPower() {
                     <Button variant="secondary" onClick={closeModal}>
                       Close
                     </Button>
-                  </Alert>
+                  </Alert> */}
                   <Card.Text
                     className="overflow-auto"
                     style={{ padding: '5px', minHeight: '7rem' }}
@@ -155,7 +146,7 @@ export default function AdminPower() {
                       </Button>
                     </Col>
 
-                    <Col>
+                    {/* <Col>
                       <Button
                         className="w-100 "
                         onClick={openModal}
@@ -164,7 +155,7 @@ export default function AdminPower() {
                       >
                         <FontAwesomeIcon icon={faLink} />
                       </Button>
-                    </Col>
+                    </Col> */}
                     <Col>
                       <DeleteBtn user={user} />
                     </Col>

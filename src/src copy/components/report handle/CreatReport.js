@@ -6,8 +6,10 @@ import React, { useState } from 'react';
 import { Button, Modal, Form, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faFileUpload } from '@fortawesome/free-solid-svg-icons';
+import { MdReport, MdReportProblem } from 'react-icons/md';
+import { CgScreenShot } from 'react-icons/cg';
 
-export default function CreatPost() {
+export default function CreatReport() {
   const { authUser } = useAuth();
   const { nameFilter } = useAuth2();
   const uniqid = require('uniqid');
@@ -38,18 +40,18 @@ export default function CreatPost() {
   const onSubmit = async e => {
     e.preventDefault();
     const username = e.target.username.value;
-    const inputUrl = e.target.inputUrl.value;
+    // const inputUrl = e.target.inputUrl.value;
     if (!username || !fileUrl) {
       return;
     }
-    await fb.firestore.collection('users').doc(username).set({
+    await fb.firestore.collection('usersReports').doc(username).set({
       name: username,
-      locate: inputUrl,
+      // locate: inputUrl,
       avatar: fileUrl,
       userId: authUser.uid,
       createdAt: database.getCurrentTimestamp(),
-      likes: null,
-      comments: null,
+      // likes: null,
+      // comments: null,
       fb_Tag: facebook,
       insta_Tag: instagram,
       youtube_Tag: youtube,
@@ -61,24 +63,30 @@ export default function CreatPost() {
   // console.log(nameFilter[0].userName);
   return (
     <>
-      <Card style={{ border: 'none' }}>
+      <Card style={{ maxWidth: '60rem' }}>
         <Card.Body>
+          <Card.Title
+            style={{ color: 'red', fontSize: '15px', fontWeight: 'bold' }}
+          >
+            Report a problem
+          </Card.Title>
           <Card.Text>
-            A successful influencer marketing strategy helps you increase brand
-            exposure, build authority, and connect with new audiences. It drives
-            traffic to your site and leads new customers to your products and
-            services...
             <br />
-            <br /> <Card.Title>We can help to find your influancer </Card.Title>
+            <br />
+            What Happend??
+            <br /> <Card.Title>How can we help you </Card.Title>
           </Card.Text>
           <Button
-            className="w-100 "
+            // style={{ Width: '305rem' }}
+            // className="mxw-500 "
             onClick={openModal}
-            variant="outline-success"
-            size="sm"
+            variant="outline-danger"
+            // size="sm"
           >
-            <FontAwesomeIcon icon={faEdit} />
-            <strong>Create a Post</strong>
+            {' '}
+            <MdReportProblem style={{ height: '10px', color: 'red' }} />
+            <FontAwesomeIcon icon={MdReport} />
+            <strong> Report something</strong>
           </Button>
           <Modal show={open} onHide={closeModal}>
             <Form onSubmit={onSubmit}>
@@ -93,14 +101,14 @@ export default function CreatPost() {
                 >
                   <Form.Control
                     as="textarea"
-                    rows={10}
+                    rows={9}
                     type="text"
                     name="username"
-                    placeholder="Explain the status as much details as possible...."
+                    placeholder="Explain the Problem in as much details as possible...."
                   />
                 </Form.Group>
 
-                <Form.Group
+                {/* <Form.Group
                   style={{
                     display: 'flex',
                     padding: '10px',
@@ -110,26 +118,22 @@ export default function CreatPost() {
                 >
                   <Form.Control
                     as="textarea"
-                    rows={2}
+                    rows={1}
                     type="url"
                     name="inputUrl"
-                    placeholder="https://..."
+                    placeholder=""
                   />
-                </Form.Group>
+                </Form.Group> */}
 
-                <Form.Group>
-                  <Card.Text
-                    style={{
-                      // color: 'green',
-                      fontWeight: 'bold',
-                      marginTop: '1.5rem',
-                      marginLeft: '1rem',
-                    }}
-                  >
-                    Tag a category for your post
-                  </Card.Text>
-                </Form.Group>
-
+                <Card.Text
+                  style={{
+                    color: 'red',
+                    marginTop: '0.5rem',
+                    marginLeft: '1rem',
+                  }}
+                >
+                  Tag a category for it
+                </Card.Text>
                 <Form.Group
                   style={{
                     display: 'flex',
@@ -204,9 +208,8 @@ export default function CreatPost() {
                     // marginBottom: "10px",
                   }}
                 >
-                  <label className="btn btn-outline-success btn-sm m-0 mr-2">
-                    <FontAwesomeIcon icon={faFileUpload} /> Attached a photo
-                    must
+                  <label className="btn btn-outline-danger btn-sm m-0 mr-2">
+                    <CgScreenShot /> Include a ScreenShot must
                     <input
                       type="file"
                       onChange={onFileChange}
@@ -230,7 +233,7 @@ export default function CreatPost() {
                   variant="secondary"
                   onClick={closeModal}
                 >
-                  Close
+                  Cancel
                 </Button>
                 <Button
                   style={{
@@ -239,10 +242,10 @@ export default function CreatPost() {
 
                     // marginBottom: "10px",
                   }}
-                  variant="success"
+                  variant="danger"
                   type="submit"
                 >
-                  Upload
+                  Submit Report
                 </Button>
               </Modal.Footer>
             </Form>
