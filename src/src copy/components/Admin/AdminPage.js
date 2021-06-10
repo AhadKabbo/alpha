@@ -18,14 +18,14 @@ const AdminPage = () => {
     setIsOpen(!isOpen);
   };
 
-  // KHAN is the admin which Uid = 'cgdc16wzSkeLMWPSL200GOvGmqp1'
+  // KHAN is the admin which Uid = '6zFrfJd0wiUrwjLzeYKrl8xMAqP2'
 
   return authResolved ? (
     <>
       <NavbarPage toggle={toggle} {...navlogo} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Container fluid style={{ marginTop: '6rem' }}>
-        {authUser.uid === 'cgdc16wzSkeLMWPSL200GOvGmqp1' ? (
+        {authUser.uid === '6zFrfJd0wiUrwjLzeYKrl8xMAqP2' ? (
           <>
             <ReportFeed />
             <AdminPower />
