@@ -13,6 +13,9 @@ import AdminPage from '../../src copy/components/Admin/AdminPage';
 import UnderDevlopment from 'src copy/components/UnderDevlopment';
 import ReportPage from 'src copy/components/report handle/ReportPage';
 import SuccessStoryPage from 'src copy/components/succsess-Story/SuccessStoryPage';
+import AboutMe from 'src copy/components/succsess-Story/AboutMe';
+import AboutMeInfo from 'src copy/components/Info/AboutMeInfo';
+import { navlogo } from '../../src copy/components/Info/Data';
 // import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
 
 export const App = () => {
@@ -52,6 +55,7 @@ export const App = () => {
               <Route path="/success-story" component={SuccessStoryPage} />
               <Route path="/newsfeed" component={SortGrp} />
               <Route path="/admin" component={AdminPage} />
+              <Route path="/about-me" component={AboutMeInfo} />
 
               <div className="app1">
                 <Route path="/chat" component={Chat} />
@@ -65,6 +69,7 @@ export const App = () => {
               {/* Basic page  */}
               <Route path="/" component={Home} exact />
               <Route path="/under-devlopment" component={UnderDevlopment} />
+              <Route path="/about-me" component={AboutMeInfo} />
               <div className="app1">
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />

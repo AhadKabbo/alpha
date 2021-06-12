@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../ButtonElements';
-import { ButtonR } from '../ButtonElements';
+import { ButtonS } from '../ButtonElements';
 import {
   InfoContainer,
   InfoWrapper,
@@ -17,7 +17,7 @@ import {
   Img,
 } from './InfoElements';
 
-const Info = ({
+const SuccessSotoryInfo = ({
   lightBg,
   id,
   imgStart,
@@ -45,8 +45,8 @@ const Info = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonR
-                    to="/signup"
+                  <ButtonS
+                    to="/success-story"
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -57,7 +57,7 @@ const Info = ({
                     dark2={dark2 ? 1 : 0}
                   >
                     {buttonLabel}
-                  </ButtonR>
+                  </ButtonS>
                 </BtnWrap>
 
                 {/* <BtnWrap2>
@@ -87,4 +87,4 @@ const Info = ({
   );
 };
 
-export default Info;
+export default SuccessSotoryInfo;

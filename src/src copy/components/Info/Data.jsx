@@ -68,3 +68,20 @@ export const commonFeeds = {
   id: 'about',
   lightBg: false,
 };
+
+export const successSotoryInfo = {
+  id: 'signup',
+  lightBg: true,
+  lightText: false,
+  lighttextDesc: false,
+  topLine: 'Success Stories',
+  headline: 'We have Story to Inspire You',
+  description:
+    'Over years, businesses has trusted us for the agility, neatness and the robustness we promice and deliver.It can change the way you market your Product  in market',
+  buttonLabel: 'Read Stories',
+  imgStart: false,
+  img: '/img/storyInspire.svg',
+  alt: 'car',
+  primary: false,
+  darkText: true,
+};

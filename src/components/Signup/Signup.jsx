@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FormField } from 'components/FormField/FormField';
 import { defaultValues, validationSchema } from './formikConfig';
+import Logo from '../../src copy/components/authentication/Logo';
+import { navlogo } from '../../src copy/components/Info/Data';
 
 export const Signup = () => {
   const history = useHistory();
@@ -28,7 +30,7 @@ export const Signup = () => {
               .collection('chatUsers')
               .doc(res.user.uid)
               .set({ userName, avatar: '', signupUserId: res.user.uid });
-          } )  ;
+          });
         } else {
           setServerError(
             "We're having trouble signing you up. Please try again.",
@@ -43,12 +45,13 @@ export const Signup = () => {
             "We're having trouble signing you up. Please try again.",
           );
         }
-      }); history.push("/verify-email")
-      .finally(() => setSubmitting(false));
-  }
+      });
+    history.push('/verify-email').finally(() => setSubmitting(false));
+  };
 
   return (
     <div className="auth-form">
+      <Logo {...navlogo} />
       <h1>Signup</h1>
       <Formik
         onSubmit={signup}

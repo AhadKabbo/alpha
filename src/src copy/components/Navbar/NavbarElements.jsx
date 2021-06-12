@@ -75,7 +75,7 @@ export const NavLogo = styled(LinkR)`
   }
 `;
 export const NavLogoNew = styled(LinkR)`
-  justify-self: flex-start;
+  justify-self: right;
   cursor: pointer;
   display: flex;
   align-items: center;

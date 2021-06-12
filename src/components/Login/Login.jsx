@@ -1,9 +1,12 @@
 import { fb } from 'service';
 import { useState } from 'react';
 import { Form, Formik } from 'formik';
+import { Card, CardImg } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { FormField } from 'components/FormField/FormField';
 import { validationSchema, defaultValues } from './formikConfig';
+import Logo from '../../src copy/components/authentication/Logo';
+import { navlogo } from '../../src copy/components/Info/Data';
 
 export const Login = () => {
   const history = useHistory();
@@ -17,7 +20,8 @@ export const Login = () => {
           setServerError(
             "We're having trouble logging you in. Please try again.",
           );
-        } history.push("/")
+        }
+        history.push('/');
       })
       .catch(err => {
         if (err.code === 'auth/wrong-password') {
@@ -33,6 +37,7 @@ export const Login = () => {
 
   return (
     <div className="auth-form">
+      <Logo {...navlogo} />
       <h1>Login</h1>
       <Formik
         onSubmit={login}
@@ -44,7 +49,6 @@ export const Login = () => {
           <Form>
             <FormField name="email" label="Email" type="email" />
             <FormField name="password" label="Password" type="password" />
-
 
             <button type="submit" disabled={!isValid || isSubmitting}>
               Login
@@ -68,8 +72,6 @@ export const Login = () => {
                 Forget_pass!
               </span>
             </div>
-
-            
           </Form>
         )}
       </Formik>
@@ -78,3 +80,19 @@ export const Login = () => {
     </div>
   );
 };
+
+{
+  /* <CardImg
+        style={{
+          display: 'flex',
+          justifyContent: 'right',
+          cursor: 'pointer',
+          marginLeft: '25rem',
+          marginTop: '-1rem',
+          marginBottom: '2rem',
+          maxHeight: '6rem',
+          maxWidth: '6rem',
+        }}
+        src="/img/ProChar.svg"
+      /> */
+}

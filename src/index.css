@@ -93,6 +93,7 @@ code {
   color: #dc5b21;
   box-shadow: 0px 2px 3px #1cc7d9;
 }
+
 .auth-form button:disabled {
   color: #101522;
   cursor: not-allowed;

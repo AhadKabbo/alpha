@@ -4,9 +4,6 @@ import { useAuth2 } from '../../../hooks';
 import { database } from '../../../service';
 import React, { useState } from 'react';
 import { Button, Modal, Form, Card, Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faFileUpload } from '@fortawesome/free-solid-svg-icons';
-import { MdReport, MdReportProblem } from 'react-icons/md';
 import { CgImage, CgScreenShot } from 'react-icons/cg';
 import { FaBlogger } from 'react-icons/fa';
 
@@ -64,7 +61,10 @@ export default function CreatSuccessStory() {
         className="d-flex align-items-center justify-content-center "
         style={{ marginTop: '6rem' }}
       >
-        <Card style={{ maxWidth: '62rem' }}>
+        <Card
+          className="shadow p-3 mb-5 bg-white rounded"
+          style={{ maxWidth: '62rem' }}
+        >
           <Card.Body>
             <Card.Title>
               Post about Your Success Story, Leave a Foot-Print of your Success

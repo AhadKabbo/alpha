@@ -8,15 +8,28 @@ import {
   Alert,
   CardImg,
 } from 'react-bootstrap';
+import Footer from '../Footer';
+import NavbarPage from '../Navbar/indexPage';
+import Sidebar from '../SideBar/index';
+import { navlogo } from './Data';
 
-const AboutMe = ({ alt, img }) => {
+const AboutMeInfo = ({ alt, img }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
+      <NavbarPage toggle={toggle} {...navlogo} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+
       <Container
         fluid
         className="d-flex align-items-center justify-content-center "
         style={{
-          marginTop: '2rem',
+          marginTop: '11rem',
+          marginBottom: '6rem',
           // minHeight: '10rem',
           height: 'auto',
           minWidth: '10rem',
@@ -207,7 +220,8 @@ const AboutMe = ({ alt, img }) => {
           </Row>
         </Card>
       </Container>
+      <Footer {...navlogo} />
     </>
   );
 };
-export default AboutMe;
+export default AboutMeInfo;

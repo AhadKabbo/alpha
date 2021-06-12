@@ -117,7 +117,7 @@ const Navbar = ({ toggle, alt, img }) => {
                     exact="true"
                     offset={-80}
                   >
-                    Find Influancer
+                    Find More
                   </NavLinks>
                 </NavItem>
               )}
