@@ -72,9 +72,13 @@ export default function CreatPost() {
             <br /> <Card.Title>We can help to find your influancer </Card.Title>
           </Card.Text>
           <Button
+            style={{
+              color: '#040404',
+              background: '#1cc7d9',
+            }}
             className="w-100 "
             onClick={openModal}
-            variant="outline-success"
+            variant="outline-info"
             size="sm"
           >
             <FontAwesomeIcon icon={faEdit} />
