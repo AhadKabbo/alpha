@@ -112,8 +112,7 @@ const NavbarPage = ({ toggle, alt, img }) => {
                     <NavBtnLinkI to="/User">
                       <CgProfile
                         style={{ color: '#040404', marginBottom: '3px' }}
-                      />{' '}
-                      Profile
+                      />
                     </NavBtnLinkI>
                   </NavBtnI>
 
@@ -122,8 +121,7 @@ const NavbarPage = ({ toggle, alt, img }) => {
                       {' '}
                       <MdChatBubble
                         style={{ color: '#040404', marginBottom: '3px' }}
-                      />{' '}
-                      My Chat
+                      />
                     </NavBtnLinkI>
                   </NavBtnI>
 
@@ -131,8 +129,7 @@ const NavbarPage = ({ toggle, alt, img }) => {
                     <NavBtnLinkI to="/newsfeed">
                       <FaNewspaper
                         style={{ color: '#040404', marginBottom: '3px' }}
-                      />{' '}
-                      NewsFeed
+                      />
                     </NavBtnLinkI>
                   </NavBtnI>
                 </>

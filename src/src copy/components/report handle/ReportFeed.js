@@ -67,8 +67,8 @@ export default function ReportFeed() {
         Report Handling
       </Card.Title>
       <Card
-        className="overflow-auto"
-        style={{ marginTop: '1rem', maxHeight: '60rem' }}
+        className="overflow-auto shadow p-3 mb-5 bg-white rounded"
+        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
           {reports.map(user => (
@@ -77,6 +77,7 @@ export default function ReportFeed() {
               style={{ marginTop: '1rem', padding: '10px', maxHeight: '64rem' }}
             >
               <Card
+                className="shadow p-3 mb-5 bg-white rounded"
                 style={{
                   padding: '10px',
                   maxHeight: '60rem',

@@ -62,7 +62,10 @@ export default function CreatReport() {
   // console.log(nameFilter[0].userName);
   return (
     <>
-      <Card style={{ maxWidth: '60rem' }}>
+      <Card
+        className="shadow p-3 mb-5 bg-white rounded"
+        style={{ maxWidth: '60rem' }}
+      >
         <Card.Body>
           <Card.Title
             style={{ color: 'red', fontSize: '15px', fontWeight: 'bold' }}

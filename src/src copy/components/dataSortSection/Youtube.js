@@ -49,7 +49,7 @@ export default function Youtube() {
         Youtube
       </Card.Title>
       <Card
-        className="overflow-auto"
+        className="overflow-auto shadow p-3 mb-5 bg-white rounded"
         style={{ marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
@@ -62,6 +62,7 @@ export default function Youtube() {
               style={{ padding: '10px', maxHeight: '60rem' }}
             >
               <Card
+                className="shadow p-3 mb-5 bg-white rounded"
                 style={{
                   padding: '10px',
                   maxHeight: '55rem',

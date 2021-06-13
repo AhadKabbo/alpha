@@ -31,8 +31,10 @@ const Profile = ({ alt, img }) => {
         <>
           {nameFilter.map(user => (
             <Card
+              className="shadow p-3 mb-5 bg-white rounded"
               style={{
                 marginTop: '3rem',
+                // marginLeft: '3rem',
                 padding: '3px',
                 maxHeight: '30rem',
                 maxWidth: '20rem',
@@ -41,7 +43,7 @@ const Profile = ({ alt, img }) => {
               <Card.Body>
                 <Card
                   style={{
-                    marginLeft: '1.5rem',
+                    // marginLeft: '-0.6rem',
                     width: '180px',
                     height: '180px',
                     borderRadius: '100%',
@@ -67,13 +69,24 @@ const Profile = ({ alt, img }) => {
          </Card.Text> */}
 
                 <Link
+                  style={{
+                    color: '#040404',
+                    background: '#1cc7d9',
+                  }}
                   to="/"
                   className="btn btn-primary w-100 mt-3"
                   onClick={() => fb.auth.signOut()}
                 >
                   Log Out
                 </Link>
-                <Link to="/admin" className="btn btn-primary w-100 mt-3">
+                <Link
+                  style={{
+                    color: '#040404',
+                    background: '#1cc7d9',
+                  }}
+                  to="/admin"
+                  className="btn btn-primary w-100 mt-3"
+                >
                   Go to Admin page
                 </Link>
               </Card.Body>
@@ -84,8 +97,10 @@ const Profile = ({ alt, img }) => {
         <>
           {nameFilter.map(user => (
             <Card
+              className="shadow p-3 mb-5 bg-white rounded"
               style={{
                 marginTop: '3rem',
+                // marginLeft: '3rem',
                 padding: '3px',
                 maxHeight: '30rem',
                 maxWidth: '20rem',
@@ -94,7 +109,7 @@ const Profile = ({ alt, img }) => {
               <Card.Body>
                 <Card
                   style={{
-                    marginLeft: '1.5rem',
+                    marginLeft: '-0.6rem',
                     width: '180px',
                     height: '180px',
                     borderRadius: '100%',
@@ -120,6 +135,10 @@ const Profile = ({ alt, img }) => {
          </Card.Text> */}
 
                 <Link
+                  style={{
+                    color: '#040404',
+                    background: '#1cc7d9',
+                  }}
                   to="/"
                   className="btn btn-primary w-100 mt-3"
                   onClick={() => fb.auth.signOut()}

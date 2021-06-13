@@ -71,8 +71,8 @@ export default function AdminPower() {
         All Users All post
       </Card.Title>
       <Card
-        className="overflow-auto"
-        style={{ marginTop: '1rem', maxHeight: '60rem' }}
+        className="overflow-auto shadow p-3 mb-5 bg-white rounded"
+        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
           {usersAdmin.map(user => (
@@ -81,6 +81,7 @@ export default function AdminPower() {
               style={{ padding: '10px', maxHeight: '60rem' }}
             >
               <Card
+                className="shadow p-3 mb-5 bg-white rounded"
                 style={{
                   padding: '10px',
                   maxHeight: '55rem',

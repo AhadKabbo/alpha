@@ -63,11 +63,11 @@ export default function Fb() {
           fontWeight: 'bold',
         }}
       >
-        FaceBook
+        Post related to FaceBook
       </Card.Title>
       <Card
-        className="overflow-auto"
-        style={{ marginTop: '1rem', maxHeight: '60rem' }}
+        className="overflow-auto shadow p-3 mb-5 bg-white rounded"
+        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
           {/* <strong>Facebook Promotion</strong>
@@ -79,6 +79,7 @@ export default function Fb() {
               style={{ padding: '10px', maxHeight: '60rem' }}
             >
               <Card
+                className="shadow p-3 mb-5 bg-white rounded"
                 style={{
                   padding: '10px',
                   maxHeight: '55rem',

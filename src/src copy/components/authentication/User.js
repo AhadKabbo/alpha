@@ -21,11 +21,22 @@ export default function User() {
       <Sidebar isOpen={isOpen} toggle={toggle} />
 
       <Container fluid style={{ marginTop: '6rem' }}>
-        <Row style={{ marginBottom: '2rem' }}>
-          <Col md style={{ maxHeight: '30rem', maxWidth: '20rem' }}>
+        <Row
+          className="d-flex align-items-center justify-content-center  "
+          style={{ marginBottom: '2rem' }}
+        >
+          <Col
+            md
+            className="d-flex align-items-center justify-content-center  "
+            style={{ maxHeight: '30rem', maxWidth: '20rem' }}
+          >
             <Profile {...homeObjProfile} />
           </Col>
-          <Col md style={{ marginTop: '7rem', marginRight: '20rem' }}>
+          <Col
+            md
+            className="d-flex align-items-center justify-content-center  "
+            style={{ marginTop: '0rem', marginRight: '0rem' }}
+          >
             <CreatPost />
           </Col>
         </Row>
