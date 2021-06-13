@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { fb } from '../../../service';
-import {
-  Button,
-  Row,
-  Col,
-  Card,
-  Container,
-  Modal,
-  Alert,
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
 
-import { useAuth } from '../../../hooks';
+// import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
-import { DeleteBtn } from '../UserProfile/DeleteBtn';
+import { faLaugh } from '@fortawesome/free-solid-svg-icons';
+// import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
 export default function SuccessStoryFeed() {
-  const { authUser } = useAuth();
+  // const { authUser } = useAuth();
   const [reports, setUsers] = React.useState([]);
-  const [chat, setChatUsers] = useState([]);
-  const [open, setOpen] = useState(false);
 
-  function openModal() {
-    setOpen(true);
-  }
+  // function openModal() {
+  //   setOpen(true);
+  // }
 
-  function closeModal() {
-    setOpen(false);
-  }
+  // function closeModal() {
+  //   setOpen(false);
+  // }
 
   useEffect(() => {
     const fetchData = async () => {

@@ -16,7 +16,6 @@ import {
   FooterLink,
   SocialIconLink,
   SocialIcons,
-  SocialLogo,
   NavLogoNew,
   SocialMedia,
   SocialMediaWrap,

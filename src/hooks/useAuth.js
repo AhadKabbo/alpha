@@ -1,6 +1,6 @@
 import { fb } from 'service';
 import { useEffect, useState } from 'react';
-import { useResolved } from 'hooks';
+// import { useResolved } from 'hooks';
 
 // Initialized as undefined and set to null if not logged in
 // This gives us a way to determine whether or not the hook
@@ -17,7 +17,7 @@ import { useResolved } from 'hooks';
 
 export const useAuth = () => {
   const [authUser, setAuthUser] = useState(); // undefined | firebase.User | null
-  const authResolved = useResolved(authUser);
+  // const authResolved = useResolved(authUser);
 
   function signup(email, password) {
     return fb.auth.createUserWithEmailAndPassword(email, password);

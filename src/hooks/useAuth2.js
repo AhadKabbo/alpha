@@ -1,7 +1,7 @@
 import { fb } from 'service';
 import { useEffect, useState } from 'react';
 import { useAuth } from './useAuth';
-import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+
 // Initialized as undefined and set to null if not logged in
 // This gives us a way to determine whether or not the hook
 // has yet to resolve.
@@ -18,7 +18,7 @@ import { Button, Row, Col, Card, Container } from 'react-bootstrap';
 export const useAuth2 = () => {
   const { authUser } = useAuth();
   const [chat, setChatUsers] = useState([]);
-  const [create, setcreate] = useState(); // undefined | firebase.User | null
+  // const [create, setcreate] = useState(); // undefined | firebase.User | null
 
   // useEffect(() => {
   //   const unsubscribe = fb.auth.onAuthStateChanged(user => {

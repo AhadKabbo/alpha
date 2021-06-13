@@ -1,13 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Col,
-  Row,
-  Card,
-  Container,
-  Button,
-  Alert,
-  CardImg,
-} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Col, Row, Card, Container, CardImg } from 'react-bootstrap';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
 import Sidebar from '../SideBar/index';
@@ -68,6 +60,7 @@ const AboutMeInfo = ({ alt, img }) => {
                 >
                   <Card.Body>
                     <CardImg
+                      className="shadow p-3 mb-5 bg-white rounded"
                       style={{
                         borderRadius: '1%',
                         minHeight: '16rem',
@@ -96,6 +89,7 @@ const AboutMeInfo = ({ alt, img }) => {
                 <Card
                   style={{
                     border: 'none',
+                    marginTop: '-3.5rem',
                   }}
                 >
                   <Card.Body>
@@ -115,6 +109,23 @@ const AboutMeInfo = ({ alt, img }) => {
                         Name
                       </strong>
                       : Mohammad Ahad Hossain (KABBO)
+                    </Card.Text>
+                    <Card.Text
+                      style={{
+                        fontSize: '0.90rem',
+                      }}
+                    >
+                      <strong
+                        style={{
+                          marginBottom: '5rem',
+                          fontSize: '1.2rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        {' '}
+                        User Name
+                      </strong>
+                      : KABBO
                     </Card.Text>
                     <Card.Text
                       style={{
@@ -212,7 +223,7 @@ const AboutMeInfo = ({ alt, img }) => {
                     English versions from the 1914 translation by H. Rackham.
                     There are many variations of passages of Lorem Ipsum
                     available, but the majority have suffered alteration in some
-                    form,
+                    form.
                   </Card.Text>
                 </Card.Body>
               </Card>

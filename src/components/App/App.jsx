@@ -1,7 +1,6 @@
-// import { useEffect } from 'react';
 import { ChatProvider } from 'context';
 import 'semantic-ui-css/semantic.min.css';
-import { useAuth, useResolved } from 'hooks';
+import { useAuth } from 'hooks';
 import { Login, Signup, Chat } from 'components';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../src copy/pages';
@@ -13,33 +12,11 @@ import AdminPage from '../../src copy/components/Admin/AdminPage';
 import UnderDevlopment from 'src copy/components/UnderDevlopment';
 import ReportPage from 'src copy/components/report handle/ReportPage';
 import SuccessStoryPage from 'src copy/components/succsess-Story/SuccessStoryPage';
-import AboutMe from 'src copy/components/succsess-Story/AboutMe';
 import AboutMeInfo from 'src copy/components/Info/AboutMeInfo';
-import { navlogo } from '../../src copy/components/Info/Data';
-// import UpdateProfile from "../../src copy/components/authentication/UpdateProfile"
 
 export const App = () => {
-  // const history = useHistory();
-  const { authUser, verification } = useAuth();
-
-  // console.log(authUser);
-  const authResolved = useResolved(authUser);
-
-  // if (authResolved) {
-  //   const verification = authUser.emailVerified;
-  //   console.log(verification);
-  // }
-
-  // // If the user is logged in it will prevent the
-  // // user from seeing the login/signup screens
-  // // by always redirecting to chat on auth change.
-
-  // useEffect(() => {
-  //   if (authResolved) {
-  //     history.push(!!authUser ? '/' : '/login');
-
-  //   }
-  // }, [authResolved, authUser, history]);
+  const { authUser } = useAuth();
+  // const authResolved = useResolved(authUser);
 
   return (
     <>

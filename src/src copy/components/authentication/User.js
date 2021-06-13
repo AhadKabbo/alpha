@@ -7,7 +7,7 @@ import { homeObjProfile, navlogo } from '../Info/Data';
 import { Container, Col, Row } from 'react-bootstrap';
 import PersonalFeeds from '../UserProfile/PersonalFeeds';
 import CreatPost from '../UserProfile/CreatPost';
-import Ap from '../../Ap';
+// import Ap from '../../Ap';
 
 export default function User() {
   const [isOpen, setIsOpen] = useState(false);

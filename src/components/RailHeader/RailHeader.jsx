@@ -4,7 +4,7 @@ import { useResolved } from 'hooks';
 import { useRef, useState } from 'react';
 import { ImageUpload } from 'components';
 import { Icon, IconGroup, Image, Loader } from 'semantic-ui-react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export const RailHeader = () => {
   const history = useHistory();
@@ -61,7 +61,7 @@ export const RailHeader = () => {
 
       <div className="left-rail-header">
         <Icon
-          onClick={() =>history.push("/")}
+          onClick={() => history.push('/')}
           className="sign-out"
           name="sign out"
         />

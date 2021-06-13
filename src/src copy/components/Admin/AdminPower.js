@@ -1,33 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { fb } from '../../../service';
-import {
-  Button,
-  Row,
-  Col,
-  Card,
-  Container,
-  Modal,
-  Alert,
-} from 'react-bootstrap';
-import NavbarPage from '../Navbar/indexPage';
-import Sidebar from '../SideBar/index';
-import { Link } from 'react-router-dom';
-
-import { useAuth } from '../../../hooks';
+import { Button, Row, Col, Card, Container, Alert } from 'react-bootstrap';
+// import NavbarPage from '../Navbar/indexPage';
+// import Sidebar from '../SideBar/index';
+// import { Link } from 'react-router-dom';
+// import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 import { DeleteBtn } from '../UserProfile/DeleteBtn';
 
 export default function AdminPower() {
-  const { authUser } = useAuth();
+  // const { authUser } = useAuth();
   const [usersAdmin, setUsers] = React.useState([]);
-  const [chat, setChatUsers] = useState([]);
   const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
 
   function openModal() {
     setOpen(true);

@@ -4,7 +4,7 @@ import { useAuth2 } from '../../../hooks';
 import { database } from '../../../service';
 import React, { useState } from 'react';
 import { Button, Modal, Form, Card, Container } from 'react-bootstrap';
-import { CgImage, CgScreenShot } from 'react-icons/cg';
+import { CgImage } from 'react-icons/cg';
 import { FaBlogger } from 'react-icons/fa';
 
 export default function CreatSuccessStory() {

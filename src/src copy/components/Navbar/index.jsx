@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaNewspaper, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { FaBars, FaNewspaper, FaUserPlus } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { IconContext } from 'react-icons/lib';
 import {
   Nav,
   NavbarContainer,
-  NavLogo,
   MobileIcon,
   NavMenu,
   NavMenuB,
   NavLinks,
   NavItem,
   NavLogoNew,
-  NavBtn,
-  NavBtnLink,
   NavBtnI,
   NavBtnLinkI,
   NavBtnLinkL,

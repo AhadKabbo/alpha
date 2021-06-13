@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../ButtonElements';
+
 import { ButtonS } from '../ButtonElements';
 import {
   InfoContainer,
@@ -12,7 +12,6 @@ import {
   Heading,
   Subtitle,
   BtnWrap,
-  BtnWrap2,
   ImgWrap,
   Img,
 } from './InfoElements';
@@ -27,7 +26,6 @@ const SuccessSotoryInfo = ({
   darkText,
   description,
   buttonLabel,
-  buttonLabel2,
   alt,
   img,
   primary,

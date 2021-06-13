@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
 import Sidebar from '../SideBar/index';
-import { homeObjProfile, navlogo } from '../Info/Data';
+import { navlogo } from '../Info/Data';
 import { Container, Col, Row } from 'react-bootstrap';
 // import PersonalFeeds from '../UserProfile/PersonalFeeds';
 import CreatReport from './CreatReport';
-import Ap from '../../Ap';
 
 export default function ReportPage() {
   const [isOpen, setIsOpen] = useState(false);

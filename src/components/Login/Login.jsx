@@ -1,7 +1,6 @@
 import { fb } from 'service';
 import { useState } from 'react';
 import { Form, Formik } from 'formik';
-import { Card, CardImg } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { FormField } from 'components/FormField/FormField';
 import { validationSchema, defaultValues } from './formikConfig';
@@ -80,19 +79,3 @@ export const Login = () => {
     </div>
   );
 };
-
-{
-  /* <CardImg
-        style={{
-          display: 'flex',
-          justifyContent: 'right',
-          cursor: 'pointer',
-          marginLeft: '25rem',
-          marginTop: '-1rem',
-          marginBottom: '2rem',
-          maxHeight: '6rem',
-          maxWidth: '6rem',
-        }}
-        src="/img/ProChar.svg"
-      /> */
-}

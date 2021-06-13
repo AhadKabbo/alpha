@@ -8,7 +8,6 @@ import {
   homeObjTwo,
   homeObjThree,
   successSotoryInfo,
-  commonFeeds,
   navlogo,
 } from '../components/Info/Data';
 import Info2 from '../components/Info/about';
@@ -16,7 +15,6 @@ import { useAuth } from '../../hooks';
 import Navbar from '../components/Navbar';
 import Services from '../components/Services';
 import Sidebar from '../components/SideBar';
-import CommonNewsFeeds from '../components/Admin/AdminPower';
 
 const Home = () => {
   const { authUser } = useAuth();

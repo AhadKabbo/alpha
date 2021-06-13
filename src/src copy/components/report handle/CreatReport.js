@@ -5,7 +5,6 @@ import { database } from '../../../service';
 import React, { useState } from 'react';
 import { Button, Modal, Form, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faFileUpload } from '@fortawesome/free-solid-svg-icons';
 import { MdReport, MdReportProblem } from 'react-icons/md';
 import { CgScreenShot } from 'react-icons/cg';
 

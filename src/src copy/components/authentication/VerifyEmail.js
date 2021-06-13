@@ -1,16 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Modal } from 'react-bootstrap';
 import { useAuth, useResolved } from '../../../hooks';
 import { Link, useHistory } from 'react-router-dom';
 import CenteredContainer from './CenteredContainer';
 import { FaSignInAlt } from 'react-icons/fa';
-import { Icon } from '../../Signin/SigninElements';
 
 export default function VerifyEmail() {
   const history = useHistory();
   const { authUser } = useAuth();
   const [open, setOpen] = useState(false);
-  const emailRef = useRef();
+  // const emailRef = useRef();
   const { verifyEmail } = useAuth();
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');

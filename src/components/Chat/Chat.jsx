@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftRail, ChatToolbar, ChatInput, MessageList } from 'components';
-import Sidebar from '../../src copy/components/SideBar'
-import NavbarPage from '../../src copy/components/Navbar/indexPageChat'
-import { navlogo } from '../../src copy/components/Info/Data';
+// import Sidebar from '../../src copy/components/SideBar'
+// import NavbarPage from '../../src copy/components/Navbar/indexPageChat'
+// import { navlogo } from '../../src copy/components/Info/Data';
 
 export const Chat = () => {
   const {
@@ -15,12 +15,10 @@ export const Chat = () => {
     selectChatClick,
     setSelectedChat,
   } = useChat();
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggle = () =>{
-    setIsOpen(!isOpen);
-  }
-
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggle = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   useEffect(() => {
     console.log('My Chats: ', myChats);
@@ -32,7 +30,7 @@ export const Chat = () => {
 
   return (
     <>
-    {/* <div className="Nav-container">
+      {/* <div className="Nav-container">
     <NavbarPage toggle={toggle} {...navlogo }/>
               <Sidebar isOpen={isOpen} toggle={toggle} /> 
               </div> */}
@@ -78,10 +76,8 @@ export const Chat = () => {
           }}
         />
       )}
-       
-      <div className="chat-container">
 
-      
+      <div className="chat-container">
         <LeftRail />
         <div className="current-chat">
           {selectedChat ? (
@@ -97,11 +93,8 @@ export const Chat = () => {
                 className="point-left"
                 alt="point-left"
               />
-              <div className="point-left-text">
-              Select A Chat
-              </div>
+              <div className="point-left-text">Select A Chat</div>
             </div>
-
 
             // <div className="no-chat-selected">
             //   {/* <img
@@ -117,7 +110,6 @@ export const Chat = () => {
             //   />
             //   Select A Chat
             // </div>
-
           )}
         </div>
       </div>

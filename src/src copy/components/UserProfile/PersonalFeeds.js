@@ -1,25 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { fb } from '../../../service';
-import {
-  Button,
-  Row,
-  Col,
-  Card,
-  Container,
-  Modal,
-  Alert,
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Row, Col, Card, Container, Alert } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 import { DeleteBtn } from './DeleteBtn';
 
 export default function PersonalFeeds() {
   const { authUser } = useAuth();
   const [usersP, setUsers] = React.useState([]);
-  const [chat, setChatUsers] = useState([]);
   const [open, setOpen] = useState(false);
 
   function openModal() {
@@ -47,20 +38,6 @@ export default function PersonalFeeds() {
     return obj.userId === authUser.uid;
   });
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const usersCollection = await fb.firestore.collection('chatUsers').get();
-  //     setChatUsers(
-  //       usersCollection.docs.map(doc => ({ ...doc.data(), id: doc.id })),
-  //     );
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // const nameFilter = chat.filter(objN => {
-  //   return objN.signupUserId === authUser.uid;
-  // });
-
   return (
     <>
       <Card.Title
@@ -77,16 +54,17 @@ export default function PersonalFeeds() {
         My Profile Timeline
       </Card.Title>
       <Card
-        className="overflow-auto"
-        style={{ marginTop: '1rem', maxHeight: '60rem' }}
+        className="overflow-auto shadow p-3 mb-5 bg-white rounded"
+        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
       >
         <Card.Body>
           {personalUser.map(user => (
             <Container
-              className="overflow-auto d-flex align-items-center justify-content-center "
+              className="overflow-auto d-flex align-items-center justify-content-center  "
               style={{ padding: '10px', maxHeight: '60rem' }}
             >
               <Card
+                className="shadow p-3 mb-5 bg-white rounded"
                 style={{
                   padding: '10px',
                   maxHeight: '55rem',

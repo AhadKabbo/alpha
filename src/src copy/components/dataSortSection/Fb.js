@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { fb } from '../../../service';
 import { Button, Row, Col, Card, Container, Alert } from 'react-bootstrap';
-import { useAuth } from '../../../hooks';
+// import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
-import { DeleteBtn } from '../UserProfile/DeleteBtn';
+import { faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export default function Fb() {
-  const { authUser } = useAuth();
+  // const { authUser } = useAuth();
   const [usersF, setUsers] = React.useState([]);
-  const [chat, setChatUsers] = useState([]);
+
   const [open, setOpen] = useState(false);
 
   function openModal() {

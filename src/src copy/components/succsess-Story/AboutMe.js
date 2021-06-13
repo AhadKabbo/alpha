@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Col,
-  Row,
-  Card,
-  Container,
-  Button,
-  Alert,
-  CardImg,
-} from 'react-bootstrap';
+import React from 'react';
+import { Col, Row, Card, Container, CardImg } from 'react-bootstrap';
 
-const AboutMe = ({ alt, img }) => {
+const AboutMe = ({ alt }) => {
   return (
     <>
       <Container
@@ -55,6 +47,7 @@ const AboutMe = ({ alt, img }) => {
                 >
                   <Card.Body>
                     <CardImg
+                      className="shadow p-3 mb-5 bg-white rounded"
                       style={{
                         borderRadius: '1%',
                         minHeight: '16rem',
@@ -83,6 +76,7 @@ const AboutMe = ({ alt, img }) => {
                 <Card
                   style={{
                     border: 'none',
+                    marginTop: '-3.5rem',
                   }}
                 >
                   <Card.Body>
@@ -99,9 +93,26 @@ const AboutMe = ({ alt, img }) => {
                         }}
                       >
                         {' '}
-                        Name
+                        Full Name
                       </strong>
                       : Mohammad Ahad Hossain (KABBO)
+                    </Card.Text>
+                    <Card.Text
+                      style={{
+                        fontSize: '0.90rem',
+                      }}
+                    >
+                      <strong
+                        style={{
+                          marginBottom: '5rem',
+                          fontSize: '1.2rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        {' '}
+                        User Name
+                      </strong>
+                      : KABBO
                     </Card.Text>
                     <Card.Text
                       style={{
@@ -174,7 +185,7 @@ const AboutMe = ({ alt, img }) => {
                       marginTop: '-1rem',
                     }}
                   >
-                    About Me
+                    About Devloper Story
                   </Card.Title>
                   <Card.Text>
                     Contrary to popular belief, Lorem Ipsum is not simply random

@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Alert, CardImg } from 'react-bootstrap';
-// import { useAuthHome } from "../../contexts/AuthContext"
-import { Link, useHistory } from 'react-router-dom';
+import { Card, Alert, CardImg } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { fb } from '../../../service';
 import { useAuth, useResolved } from '../../../hooks';
-// const db = app.firestore();
 
 const Profile = ({ alt, img }) => {
   const [error, setError] = useState('');
   const { authUser } = useAuth();
   const authResolved = useResolved(authUser);
   const [chatData, setUsers] = React.useState([]);
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
