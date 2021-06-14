@@ -47,6 +47,7 @@ export const App = () => {
               <Route path="/" component={Home} exact />
               <Route path="/under-devlopment" component={UnderDevlopment} />
               <Route path="/about-me" component={AboutMeInfo} />
+              <Route path="/report-problem" component={ReportPage} />
               <div className="app1">
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />

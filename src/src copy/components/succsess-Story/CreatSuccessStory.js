@@ -87,7 +87,7 @@ export default function CreatSuccessStory() {
             >
               {' '}
               <FaBlogger />
-              <strong> Create Your Success Story</strong>
+              <strong> Share Your Success Story</strong>
             </Button>
             <Modal show={open} onHide={closeModal}>
               <Form onSubmit={onSubmit}>

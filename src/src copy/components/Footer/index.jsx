@@ -23,8 +23,10 @@ import {
 } from './FooterElements';
 import { animateScroll as scroll } from 'react-scroll';
 import { ImgLogo } from '../Info/InfoElements';
+import { useAuth } from '../../../hooks';
 
 const Footer = ({ alt, img }) => {
+  const { authUser } = useAuth();
   const toggleHome = () => {
     scroll.scrollToTop();
   };
@@ -60,10 +62,21 @@ const Footer = ({ alt, img }) => {
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Having some issu</FooterLinkTitle>
-              <FooterLink to="/report-problem">Report a problem</FooterLink>
-              <FooterLink to="/report-problem">Page not working</FooterLink>
-              <FooterLink to="/report-problem">Fake people</FooterLink>
-              <FooterLink to="/report-problem">Money issu</FooterLink>
+              {authUser ? (
+                <>
+                  <FooterLink to="/report-problem">Report a problem</FooterLink>
+                  <FooterLink to="/report-problem">Page not working</FooterLink>
+                  <FooterLink to="/report-problem">Fake people</FooterLink>
+                  <FooterLink to="/report-problem">Money issu</FooterLink>
+                </>
+              ) : (
+                <>
+                  <FooterLink to="/signup">Report a problem</FooterLink>
+                  <FooterLink to="/signup">Page not working</FooterLink>
+                  <FooterLink to="/signup">Fake people</FooterLink>
+                  <FooterLink to="/signup">Money issu</FooterLink>
+                </>
+              )}
             </FooterLinkItems>
           </FooterLinkWrapper>
         </FooterLinkContainer>
