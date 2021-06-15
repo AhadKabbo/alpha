@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
 import Sidebar from '../SideBar';
+import CreatAdminPost from '../Admin/CreatAdminPost';
 import AdminPower from '../Admin/AdminPower';
 import NotAdmin from '../Admin/NotAdmin';
 import { useAuth, useResolved } from '../../../hooks';
@@ -27,6 +28,7 @@ const AdminPage = () => {
       <Container fluid style={{ marginTop: '6rem' }}>
         {authUser.uid === '6zFrfJd0wiUrwjLzeYKrl8xMAqP2' ? (
           <>
+            <CreatAdminPost />
             <ReportFeed />
             <AdminPower />
           </>

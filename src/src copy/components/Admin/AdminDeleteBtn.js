@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { fb } from '../../../service';
 import { Button, Modal, Form } from 'react-bootstrap';
-// import { useAuth } from "../../contexts/AuthContext";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEraser } from '@fortawesome/free-solid-svg-icons';
 
-// const db = app.firestore();
-
-export const DeleteBtn = ({ user }) => {
+export const AdminDeleteBtn = ({ user }) => {
   const [name, setName] = React.useState(user.name);
   const [open, setOpen] = useState(false);
-  // const { currentUser } = useAuth()
-  // const [usersF, setUsers] = React.useState([]);
 
   function openModal() {
     setOpen(true);
@@ -23,20 +19,16 @@ export const DeleteBtn = ({ user }) => {
 
   const onUpdate = () => {
     fb.firestore
-      .collection('users')
+      .collection('admin')
       .doc(user.id)
       .set({ ...user, name });
     closeModal();
   };
 
   const onDelete = () => {
-    fb.firestore.collection('users').doc(user.id).delete();
+    fb.firestore.collection('admin').doc(user.id).delete();
     closeModal();
   };
-
-  // const logedUser = usersF.filter(obj => {
-  //   return obj.userId === currentUser.uid;
-  // })
 
   return (
     <>

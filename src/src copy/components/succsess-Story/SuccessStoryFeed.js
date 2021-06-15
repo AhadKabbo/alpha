@@ -6,20 +6,12 @@ import { Button, Row, Col, Card, Container } from 'react-bootstrap';
 import { useAuth, useResolved } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaugh } from '@fortawesome/free-solid-svg-icons';
-import { DeleteBtn } from '../UserProfile/DeleteBtn';
+import { StoryDeleteBtn } from './StoryDeleteBtn';
 
 export default function SuccessStoryFeed() {
   const { authUser } = useAuth();
   const authResolved = useResolved(authUser);
   const [stories, setUsers] = React.useState([]);
-
-  // function openModal() {
-  //   setOpen(true);
-  // }
-
-  // function closeModal() {
-  //   setOpen(false);
-  // }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,24 +26,6 @@ export default function SuccessStoryFeed() {
     fetchData();
   }, []);
 
-  // const personalUser = usersP.filter(obj => {
-  //   return obj.userId === authUser.uid;
-  // });
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const usersCollection = await fb.firestore.collection('chatUsers').get();
-  //     setChatUsers(
-  //       usersCollection.docs.map(doc => ({ ...doc.data(), id: doc.id })),
-  //     );
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // const nameFilter = chat.filter(objN => {
-  //   return objN.signupUserId === authUser.uid;
-  // });
-
   return authResolved ? (
     <>
       <Card.Title
@@ -59,7 +33,7 @@ export default function SuccessStoryFeed() {
         style={{
           position: 'sticky',
           color: '#101522',
-          marginTop: '10rem',
+          marginTop: '25px',
           marginBottom: '35px',
           fontSize: '30px',
           fontWeight: 'bold',
@@ -69,100 +43,84 @@ export default function SuccessStoryFeed() {
       </Card.Title>
       <Card
         className="overflow-auto shadow p-3 mb-5 bg-white rounded"
-        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
+        style={{
+          marginBottom: '3rem',
+          marginTop: '-1rem',
+          maxHeight: '100rem',
+        }}
       >
         <Card.Body>
           {authUser.uid === '6zFrfJd0wiUrwjLzeYKrl8xMAqP2' ? (
             <>
               {stories.map(user => (
                 <Container
-                  className="overflow-auto d-flex align-items-center justify-content-center "
-                  style={{ padding: '10px', maxHeight: '60rem' }}
+                  className="d-flex align-items-center justify-content-center "
+                  style={{
+                    // marginBottom: '3rem',
+                    marginTop: '3rem',
+                    padding: '10px',
+                    maxHeight: '80rem',
+                  }}
                 >
                   <Card
                     className="shadow p-3 mb-5 bg-white rounded"
                     style={{
                       padding: '10px',
-                      maxHeight: '55rem',
-                      maxWidth: '40rem',
+                      maxHeight: '80rem',
+                      maxWidth: '45rem',
                     }}
                   >
-                    <Card.Img src={user.avatar} alt={user.name} />
+                    <Card.Img
+                      style={{
+                        padding: '5px',
+                        maxHeight: '60rem',
+                        maxWidth: '45rem',
+                      }}
+                      src={user.avatar}
+                      alt={user.name}
+                    />
 
                     <Card.Title
                       style={{
-                        marginTop: '25px',
+                        marginLeft: '1rem',
+                        marginTop: '0.40rem',
                         fontSize: '30px',
                         fontWeight: 'bold',
+                        color: '#1cc7d9',
                       }}
                     >
                       {user.creator}
                     </Card.Title>
 
-                    <Card
+                    <Card.Text
+                      className="overflow-auto"
                       style={{
-                        minHeight: '70px',
                         padding: '5px',
-                        marginTop: '0.5rem',
-                        marginBottom: '1rem',
+                        fontSize: '1.2rem',
+                        marginLeft: '1rem',
+                        maxHeight: '15rem',
                       }}
                     >
-                      {' '}
-                      {/* <Alert variant="secondary" show={open} onHide={closeModal}>
-                    <Alert.Heading>Hey, nice to see you...</Alert.Heading>
-                    <hr />
-                    <Card.Link to="google.com" style={{ padding: '5px' }}>
-                      {user.locate}
-                    </Card.Link>
-                    <hr />
-                    <Button variant="secondary" onClick={closeModal}>
-                      Close
-                    </Button>
-                  </Alert> */}
-                      <Card.Text
-                        className="overflow-auto"
-                        style={{ padding: '5px', minHeight: '7rem' }}
-                      >
-                        {user.name}
-                      </Card.Text>
-                    </Card>
+                      {user.name}
+                    </Card.Text>
 
-                    <Card style={{ padding: '10px' }}>
-                      <Row>
-                        <Col>
-                          <Button
-                            className="w-100 "
-                            variant="outline-success"
-                            size="sm"
-                            // onClick={closeModal}
-                          >
-                            <FontAwesomeIcon icon={faLaugh} />
-                          </Button>
-                        </Col>
+                    <Row>
+                      <Col>
+                        <Button
+                          className="w-100 "
+                          variant="outline-info"
+                          size="sm"
+                          // onClick={closeModal}
+                        >
+                          <FontAwesomeIcon icon={faLaugh} />
+                        </Button>
+                      </Col>
 
-                        {/* <Col>
-                      <Button
-                        className="w-100 "
-                        onClick={openModal}
-                        variant="outline-success"
-                        size="sm"
-                      >
-                        <FontAwesomeIcon icon={faLink} />
-                      </Button>
-                    </Col> */}
-
-                        <Col>
-                          <DeleteBtn user={user} />
-                        </Col>
-                      </Row>
-                    </Card>
+                      <Col>
+                        <StoryDeleteBtn user={user} />
+                      </Col>
+                    </Row>
                   </Card>
-
-                  {/* <Modal show={open} onHide={closeModal}>
-                <Link to="google.com" style={{ padding: '5px' }}>
-                  {user.locate}
-                </Link>
-              </Modal> */}
                 </Container>
               ))}
             </>
@@ -170,93 +128,69 @@ export default function SuccessStoryFeed() {
             <>
               {stories.map(user => (
                 <Container
-                  className="overflow-auto d-flex align-items-center justify-content-center "
-                  style={{ padding: '10px', maxHeight: '60rem' }}
+                  className="d-flex align-items-center justify-content-center "
+                  style={{
+                    // marginBottom: '3rem',
+                    marginTop: '3rem',
+                    padding: '10px',
+                    maxHeight: '80rem',
+                  }}
                 >
                   <Card
                     className="shadow p-3 mb-5 bg-white rounded"
                     style={{
                       padding: '10px',
-                      maxHeight: '55rem',
-                      maxWidth: '40rem',
+                      maxHeight: '80rem',
+                      maxWidth: '45rem',
                     }}
                   >
-                    <Card.Img src={user.avatar} alt={user.name} />
+                    <Card.Img
+                      style={{
+                        padding: '5px',
+                        maxHeight: '60rem',
+                        maxWidth: '45rem',
+                      }}
+                      src={user.avatar}
+                      alt={user.name}
+                    />
 
                     <Card.Title
                       style={{
-                        marginTop: '25px',
+                        marginLeft: '1rem',
+                        marginTop: '0.40rem',
                         fontSize: '30px',
                         fontWeight: 'bold',
+                        color: '#1cc7d9',
                       }}
                     >
                       {user.creator}
                     </Card.Title>
 
-                    <Card
+                    <Card.Text
+                      className="overflow-auto"
                       style={{
-                        minHeight: '70px',
                         padding: '5px',
-                        marginTop: '0.5rem',
-                        marginBottom: '1rem',
+                        fontSize: '1.2rem',
+                        marginLeft: '1rem',
+                        maxHeight: '15rem',
                       }}
                     >
-                      {' '}
-                      {/* <Alert variant="secondary" show={open} onHide={closeModal}>
-                    <Alert.Heading>Hey, nice to see you...</Alert.Heading>
-                    <hr />
-                    <Card.Link to="google.com" style={{ padding: '5px' }}>
-                      {user.locate}
-                    </Card.Link>
-                    <hr />
-                    <Button variant="secondary" onClick={closeModal}>
-                      Close
-                    </Button>
-                  </Alert> */}
-                      <Card.Text
-                        className="overflow-auto"
-                        style={{ padding: '5px', minHeight: '7rem' }}
-                      >
-                        {user.name}
-                      </Card.Text>
-                    </Card>
+                      {user.name}
+                    </Card.Text>
 
-                    <Card style={{ padding: '10px' }}>
-                      <Row>
-                        <Col>
-                          <Button
-                            className="w-100 "
-                            variant="outline-success"
-                            size="sm"
-                            // onClick={closeModal}
-                          >
-                            <FontAwesomeIcon icon={faLaugh} />
-                          </Button>
-                        </Col>
-
-                        {/* <Col>
-                      <Button
-                        className="w-100 "
-                        onClick={openModal}
-                        variant="outline-success"
-                        size="sm"
-                      >
-                        <FontAwesomeIcon icon={faLink} />
-                      </Button>
-                    </Col> */}
-
-                        {/* <Col>
-                          <DeleteBtn user={user} />
-                        </Col> */}
-                      </Row>
-                    </Card>
+                    <Row>
+                      <Col>
+                        <Button
+                          className="w-100 "
+                          variant="outline-info"
+                          size="sm"
+                          // onClick={closeModal}
+                        >
+                          <FontAwesomeIcon icon={faLaugh} />
+                        </Button>
+                      </Col>
+                    </Row>
                   </Card>
-
-                  {/* <Modal show={open} onHide={closeModal}>
-                <Link to="google.com" style={{ padding: '5px' }}>
-                  {user.locate}
-                </Link>
-              </Modal> */}
                 </Container>
               ))}
             </>

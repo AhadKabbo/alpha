@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { fb } from '../../../service';
 import { Button, Row, Col, Card, Container, Alert } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
-
+import ProfileLogo from './ProfileLogo';
+import { homeObjProfile } from '../Info/Data';
 import { useAuth } from '../../../hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaugh, faLink } from '@fortawesome/free-solid-svg-icons';
@@ -45,110 +46,154 @@ export default function PersonalFeeds() {
         style={{
           position: 'sticky',
           color: '#101522',
-          marginTop: '25px',
+          marginTop: '8rem',
           marginBottom: '35px',
           fontSize: '30px',
           fontWeight: 'bold',
         }}
       >
-        My Profile Timeline
+        My Timeline
       </Card.Title>
       <Card
         className="overflow-auto shadow p-3 mb-5 bg-white rounded"
-        style={{ marginBottom: '3rem', marginTop: '1rem', maxHeight: '60rem' }}
+        style={{
+          marginBottom: '3rem',
+          marginTop: '-1rem',
+          maxHeight: '100rem',
+        }}
       >
-        <Card.Body>
-          {personalUser.map(user => (
-            <Container
-              className="overflow-auto d-flex align-items-center justify-content-center  "
-              style={{ padding: '10px', maxHeight: '60rem' }}
+        {personalUser.map(user => (
+          <Container
+            className="d-flex align-items-center justify-content-center"
+            style={{
+              // marginBottom: '3rem',
+              marginTop: '3rem',
+              padding: '10px',
+              maxHeight: '80rem',
+            }}
+          >
+            <Card
+              className="shadow p-3 mb-5 bg-white rounded"
+              style={{
+                padding: '10px',
+                maxHeight: '80rem',
+                maxWidth: '45rem',
+              }}
             >
-              <Card
-                className="shadow p-3 mb-5 bg-white rounded"
+              <Card.Img
                 style={{
                   padding: '10px',
-                  maxHeight: '55rem',
-                  maxWidth: '40rem',
+                  maxHeight: '60rem',
+                  maxWidth: '45rem',
                 }}
+                src={user.avatar}
+                alt={user.name}
+              />
+              <Alert
+                style={{
+                  maxHeight: '8rem',
+                  maxWidth: '45',
+                }}
+                variant="dark"
+                show={open}
+                onHide={closeModal}
               >
-                <Card.Img src={user.avatar} alt={user.name} />
+                <Row>
+                  <Col
+                    style={{
+                      maxWidth: '36rem',
+                    }}
+                  >
+                    <Alert.Heading>
+                      This Url-link was attched by the Post Creator..
+                    </Alert.Heading>
 
-                <Card.Title
-                  style={{
-                    marginTop: '25px',
-                    fontSize: '30px',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {user.creator}
-                </Card.Title>
-
-                <Card
-                  style={{
-                    minHeight: '70px',
-                    padding: '5px',
-                    marginTop: '0.5rem',
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {' '}
-                  <Alert variant="secondary" show={open} onHide={closeModal}>
-                    <Alert.Heading>Hey, nice to see you...</Alert.Heading>
-                    <hr />
                     <Card.Link to="google.com" style={{ padding: '5px' }}>
                       {user.locate}
                     </Card.Link>
-                    <hr />
+                  </Col>
+                  <Col
+                    style={{
+                      maxWidth: '7rem',
+                    }}
+                  >
                     <Button variant="secondary" onClick={closeModal}>
                       Close
                     </Button>
-                  </Alert>
-                  <Card.Text
-                    className="overflow-auto"
-                    style={{ padding: '5px', minHeight: '7rem' }}
+                  </Col>
+                </Row>
+              </Alert>
+              <Row
+                style={{
+                  // marginLeft: '1rem',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                <Col
+                  style={{
+                    maxWidth: '4rem',
+                    // marginTop: '0.40rem',
+                    marginLeft: '1rem',
+                  }}
+                >
+                  <ProfileLogo {...homeObjProfile} />
+                </Col>
+                <Col
+                  style={{
+                    maxWidth: '20rem',
+                    marginLeft: '-0.5rem',
+                  }}
+                >
+                  <Card.Title
+                    style={{
+                      // marginTop: '20px',
+                      marginTop: '0.40rem',
+                      fontSize: '30px',
+                      fontWeight: 'bold',
+                      color: '#1cc7d9',
+                    }}
                   >
-                    {user.name}
-                  </Card.Text>
-                </Card>
+                    {user.creator}
+                  </Card.Title>
+                </Col>
+              </Row>
 
-                <Card style={{ padding: '10px' }}>
-                  <Row>
-                    <Col>
-                      <Button
-                        className="w-100 "
-                        variant="outline-success"
-                        size="sm"
-                        // onClick={closeModal}
-                      >
-                        <FontAwesomeIcon icon={faLaugh} />
-                      </Button>
-                    </Col>
+              <Card.Text
+                className="overflow-auto"
+                style={{
+                  padding: '5px',
+                  fontSize: '1.2rem',
+                  marginLeft: '1rem',
+                  maxHeight: '15rem',
+                }}
+              >
+                {user.name}
+              </Card.Text>
 
-                    <Col>
-                      <Button
-                        className="w-100 "
-                        onClick={openModal}
-                        variant="outline-success"
-                        size="sm"
-                      >
-                        <FontAwesomeIcon icon={faLink} />
-                      </Button>
-                    </Col>
-                    <Col>
-                      <DeleteBtn user={user} />
-                    </Col>
-                  </Row>
-                </Card>
-              </Card>
+              <Row>
+                <Col>
+                  <Button className="w-100 " variant="outline-info" size="sm">
+                    <FontAwesomeIcon icon={faLaugh} />
+                  </Button>
+                </Col>
 
-              {/* <Modal show={open} onHide={closeModal}>
-                <Link to="google.com" style={{ padding: '5px' }}>
-                  {user.locate}
-                </Link>
-              </Modal> */}
-            </Container>
-          ))}
-        </Card.Body>
+                <Col>
+                  <Button
+                    className="w-100 "
+                    onClick={openModal}
+                    variant="outline-info"
+                    size="sm"
+                  >
+                    <FontAwesomeIcon icon={faLink} />
+                  </Button>
+                </Col>
+                <Col>
+                  <DeleteBtn user={user} />
+                </Col>
+              </Row>
+            </Card>
+          </Container>
+        ))}
       </Card>
     </>
   );

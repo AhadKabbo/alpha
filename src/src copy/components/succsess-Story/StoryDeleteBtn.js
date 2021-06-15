@@ -7,7 +7,7 @@ import { faEraser } from '@fortawesome/free-solid-svg-icons';
 
 // const db = app.firestore();
 
-export const DeleteBtn = ({ user }) => {
+export const StoryDeleteBtn = ({ user }) => {
   const [name, setName] = React.useState(user.name);
   const [open, setOpen] = useState(false);
   // const { currentUser } = useAuth()
@@ -23,14 +23,14 @@ export const DeleteBtn = ({ user }) => {
 
   const onUpdate = () => {
     fb.firestore
-      .collection('users')
+      .collection('usersSuccessStory')
       .doc(user.id)
       .set({ ...user, name });
     closeModal();
   };
 
   const onDelete = () => {
-    fb.firestore.collection('users').doc(user.id).delete();
+    fb.firestore.collection('usersSuccessStory').doc(user.id).delete();
     closeModal();
   };
 

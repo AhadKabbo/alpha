@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Profile from '../UserProfile/Profile';
+import ProfileLogo from '../UserProfile/ProfileLogo';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
 import Sidebar from '../SideBar/index';
@@ -28,7 +29,12 @@ export default function User() {
           <Col
             md
             className="d-flex align-items-center justify-content-center  "
-            style={{ maxHeight: '30rem', maxWidth: '20rem' }}
+            style={{
+              maxHeight: '30rem',
+              maxWidth: '20rem',
+              marginLeft: '1rem',
+              marginTop: '2rem',
+            }}
           >
             <Profile {...homeObjProfile} />
           </Col>
