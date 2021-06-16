@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import Profile from '../UserProfile/Profile';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
-import Sidebar from '../SideBar/index';
+import SidebarPage from '../SideBar/indexPage';
 import { navlogo } from '../Info/Data';
 import { Container, Col, Row } from 'react-bootstrap';
 // import PersonalFeeds from '../UserProfile/PersonalFeeds';
@@ -17,7 +17,7 @@ export default function ReportPage() {
   return (
     <>
       <NavbarPage toggle={toggle} {...navlogo} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <SidebarPage isOpen={isOpen} toggle={toggle} />
 
       <Container
         fluid

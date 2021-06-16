@@ -4,12 +4,11 @@ import {
   Icon,
   CloseIcon,
   SidebarWrapper,
-  SidebarMenu,
-  SidebarLink,
-  SidebarLinkR,
+  SidebarRouteSignUp,
   SidebarRoute,
   SidebarRouteC,
   SidebarRouteN,
+  SidebarRouteS,
   SideBtnWrap,
 } from './SidebarElements';
 import { CgProfile } from 'react-icons/cg';
@@ -17,7 +16,7 @@ import { useAuth } from '../../../hooks';
 import { MdChatBubble } from 'react-icons/md';
 import { FaNewspaper, FaSignInAlt } from 'react-icons/fa';
 
-const Sidebar = ({ isOpen, toggle }) => {
+const SidebarPage = ({ isOpen, toggle }) => {
   const { authUser } = useAuth();
 
   return (
@@ -33,7 +32,7 @@ const Sidebar = ({ isOpen, toggle }) => {
       <SidebarWrapper>
         {authUser ? (
           <>
-            <SidebarMenu>
+            {/* <SidebarMenu>
               <SidebarLink to="discover" onClick={toggle}>
                 About
               </SidebarLink>
@@ -46,7 +45,13 @@ const Sidebar = ({ isOpen, toggle }) => {
               <SidebarLinkR to="/success-story" onClick={toggle}>
                 Success Stories
               </SidebarLinkR>
-            </SidebarMenu>
+            </SidebarMenu> */}
+
+            <SideBtnWrap style={{ marginBottom: '1.5rem' }}>
+              <SidebarRoute to="/User">
+                <CgProfile /> Profile
+              </SidebarRoute>
+            </SideBtnWrap>
 
             <SideBtnWrap style={{ marginBottom: '1.5rem' }}>
               <SidebarRouteC to="/chat">
@@ -60,32 +65,20 @@ const Sidebar = ({ isOpen, toggle }) => {
               </SidebarRouteN>
             </SideBtnWrap>
 
-            <SideBtnWrap>
-              <SidebarRoute to="/User">
-                <CgProfile /> Profile
-              </SidebarRoute>
+            <SideBtnWrap style={{ marginBottom: '1.5rem' }}>
+              <SidebarRouteS to="/success-story">Success Stories</SidebarRouteS>
             </SideBtnWrap>
           </>
         ) : (
           <>
-            <SidebarMenu>
-              <SidebarLink to="discover" onClick={toggle}>
-                About
-              </SidebarLink>
-              <SidebarLink to="about" onClick={toggle}>
-                Discover
-              </SidebarLink>
-              <SidebarLink to="services" onClick={toggle}>
-                Services
-              </SidebarLink>
-              <SidebarLinkR to="/signup" onClick={toggle}>
-                Sign up
-              </SidebarLinkR>
-            </SidebarMenu>
-            <SideBtnWrap>
+            <SideBtnWrap style={{ marginBottom: '1.5rem' }}>
               <SidebarRoute to="/login">
                 <FaSignInAlt /> LogIn
               </SidebarRoute>
+            </SideBtnWrap>
+
+            <SideBtnWrap>
+              <SidebarRouteSignUp to="/signup">SignUp</SidebarRouteSignUp>
             </SideBtnWrap>
           </>
         )}
@@ -94,4 +87,4 @@ const Sidebar = ({ isOpen, toggle }) => {
   );
 };
 
-export default Sidebar;
+export default SidebarPage;

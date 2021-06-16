@@ -92,40 +92,17 @@ export default function AdminAnnouncmentFeed() {
                       src={user.avatar}
                       alt={user.name}
                     />
-                    <Row
+                    <Card.Title
                       style={{
-                        // marginLeft: '1rem',
-                        marginBottom: '0.5rem',
+                        marginLeft: '1rem',
+                        marginTop: '0.40rem',
+                        fontSize: '30px',
+                        fontWeight: 'bold',
+                        color: '#1cc7d9',
                       }}
                     >
-                      <Col
-                        style={{
-                          maxWidth: '4rem',
-                          // marginTop: '0.40rem',
-                          marginLeft: '1rem',
-                        }}
-                      >
-                        <ProfileLogo {...homeObjProfile} />
-                      </Col>
-                      <Col
-                        style={{
-                          maxWidth: '20rem',
-                          marginLeft: '-0.5rem',
-                        }}
-                      >
-                        <Card.Title
-                          style={{
-                            // marginTop: '20px',
-                            marginTop: '0.40rem',
-                            fontSize: '30px',
-                            fontWeight: 'bold',
-                            color: '#1cc7d9',
-                          }}
-                        >
-                          {user.creator}
-                        </Card.Title>
-                      </Col>
-                    </Row>
+                      {user.creator}
+                    </Card.Title>
 
                     <Card.Text
                       className="overflow-auto"
@@ -235,7 +212,7 @@ export default function AdminAnnouncmentFeed() {
                       src={user.avatar}
                       alt={user.name}
                     />
-                    <Row
+                    {/* <Row
                       style={{
                         // marginLeft: '1rem',
                         marginBottom: '0.5rem',
@@ -268,7 +245,18 @@ export default function AdminAnnouncmentFeed() {
                           {user.creator}
                         </Card.Title>
                       </Col>
-                    </Row>
+                    </Row> */}
+                    <Card.Title
+                      style={{
+                        marginLeft: '1rem',
+                        marginTop: '0.40rem',
+                        fontSize: '30px',
+                        fontWeight: 'bold',
+                        color: '#1cc7d9',
+                      }}
+                    >
+                      {user.creator}
+                    </Card.Title>
 
                     <Card.Text
                       className="overflow-auto"

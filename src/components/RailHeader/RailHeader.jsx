@@ -5,6 +5,8 @@ import { useRef, useState } from 'react';
 import { ImageUpload } from 'components';
 import { Icon, IconGroup, Image, Loader } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import Logo from '../../src copy/components/authentication/Logo';
+import { navlogo } from '../../src copy/components/Info/Data';
 
 export const RailHeader = () => {
   const history = useHistory();
@@ -65,6 +67,12 @@ export const RailHeader = () => {
           className="sign-out"
           name="sign out"
         />
+        {/* <Logo
+          {...navlogo}
+          // onClick={() => history.push('/')}
+          // className="sign-out"
+          // name="sign out"
+        /> */}
         {configResolved && !!chatConfig ? (
           <div className="current-user-info">
             <IconGroup

@@ -24,7 +24,6 @@ export const App = () => {
         {authUser ? (
           <Route>
             <Switch>
-              {/* Basic page  */}
               <Route path="/" component={Home} exact />
               <Route path="/under-devlopment" component={UnderDevlopment} />
               <Route path="/user" component={User} />
@@ -36,6 +35,9 @@ export const App = () => {
 
               <div className="app1">
                 <Route path="/chat" component={Chat} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path="/verify-email" component={VerifyEmail} />
               </div>
             </Switch>
@@ -43,7 +45,6 @@ export const App = () => {
         ) : (
           <Route>
             <Switch>
-              {/* Basic page  */}
               <Route path="/" component={Home} exact />
               <Route path="/under-devlopment" component={UnderDevlopment} />
               <Route path="/about-me" component={AboutMeInfo} />
@@ -52,6 +53,7 @@ export const App = () => {
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/forgot-password" component={ForgotPassword} />
+                <Route path="/verify-email" component={VerifyEmail} />
               </div>
             </Switch>
           </Route>

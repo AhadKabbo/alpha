@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row, Card, Container, CardImg } from 'react-bootstrap';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
-import Sidebar from '../SideBar/index';
+import SidebarPage from '../SideBar/indexPage';
 import { navlogo } from './Data';
 
 const AboutMeInfo = ({ alt, img }) => {
@@ -14,7 +14,7 @@ const AboutMeInfo = ({ alt, img }) => {
   return (
     <>
       <NavbarPage toggle={toggle} {...navlogo} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <SidebarPage isOpen={isOpen} toggle={toggle} />
 
       <Container
         fluid

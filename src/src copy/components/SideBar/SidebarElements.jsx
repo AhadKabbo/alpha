@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { Link as LinkR } from 'react-router-dom'
-import { Link as LinkS } from 'react-scroll'
-import { FaTimes } from 'react-icons/fa'
+import styled from 'styled-components';
+import { Link as LinkR } from 'react-router-dom';
+import { Link as LinkS } from 'react-scroll';
+import { FaTimes } from 'react-icons/fa';
 
 export const SidebarContainer = styled.aside`
   position: fixed;
@@ -16,7 +16,7 @@ export const SidebarContainer = styled.aside`
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-`
+`;
 
 export const CloseIcon = styled(FaTimes)`
   color: #f4f4fc;
@@ -24,12 +24,12 @@ export const CloseIcon = styled(FaTimes)`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
+`;
 export const CgProfile = styled(FaTimes)`
   color: #f4f4fc;
-`
+`;
 export const Icon = styled.div`
   position: absolute;
   top: 1rem;
@@ -42,9 +42,9 @@ export const Icon = styled.div`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
+`;
 export const IconP = styled.div`
   position: absolute;
   top: 1.2rem;
@@ -53,20 +53,20 @@ export const IconP = styled.div`
   font-size: 2rem;
   cursor: pointer;
   outline: none;
-`
+`;
 export const SidebarWrapper = styled.div`
   color: #f4f4fc;
-`
+`;
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 80px);
   text-align: center;
 
-  @media  screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
     grid-template-rows: repeat(6, 60px);
   }
-`
+`;
 export const SidebarLink = styled(LinkS)`
   display: flex;
   align-items: center;
@@ -80,13 +80,13 @@ export const SidebarLink = styled(LinkS)`
   cursor: pointer;
 
   &:hover {
-    color: #1CC7D9;
+    color: #1cc7d9;
     transition: 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
+`;
 export const SidebarLinkR = styled(LinkR)`
   display: flex;
   align-items: center;
@@ -100,34 +100,32 @@ export const SidebarLinkR = styled(LinkR)`
   cursor: pointer;
 
   &:hover {
-    color: #1CC7D9;
+    color: #1cc7d9;
     transition: 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-`
+`;
 
 export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 export const SidebarRoute = styled(LinkR)`
- border-radius: 10px;
-  background: #1CC7D9;
+  border-radius: 10px;
+  background: #1cc7d9;
   white-space: nowrap;
   padding: 10px 55px;
   color: #040404;
   font-size: 20px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  
-  
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -135,24 +133,45 @@ export const SidebarRoute = styled(LinkR)`
     background: #f4f4fc;
     color: #040404;
   }
-`
+`;
+
+export const SidebarRouteSignUp = styled(LinkR)`
+  border-radius: 10px;
+  background: #1cc7d9;
+  white-space: nowrap;
+  padding: 10px 60px;
+  color: #040404;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background: #f4f4fc;
+    color: #040404;
+  }
+`;
 
 export const SidebarRouteC = styled(LinkR)`
   border-radius: 10px;
-  background: #1CC7D9;
+  background: #1cc7d9;
   white-space: nowrap;
   padding: 10px 50px;
   color: #040404;
   font-size: 20px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  
-  
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -160,24 +179,22 @@ export const SidebarRouteC = styled(LinkR)`
     background: #f4f4fc;
     color: #040404;
   }
-`
+`;
 
 export const SidebarRouteN = styled(LinkR)`
   border-radius: 10px;
-  background: #1CC7D9;
+  background: #1cc7d9;
   white-space: nowrap;
-  padding: 10px 40px;
+  padding: 10px 44px;
   color: #040404;
   font-size: 20px;
-  font-variant:small-caps;
+  font-variant: small-caps;
   font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  
-  
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -185,7 +202,29 @@ export const SidebarRouteN = styled(LinkR)`
     background: #f4f4fc;
     color: #040404;
   }
-`
+`;
+export const SidebarRouteS = styled(LinkR)`
+  border-radius: 10px;
+  background: #1cc7d9;
+  white-space: nowrap;
+  padding: 10px 30px;
+  color: #040404;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    background: #f4f4fc;
+    color: #040404;
+  }
+`;
 export const NavBtnLinkIS = styled(LinkR)`
   /* border-radius: 100px;
   background: #DC5B21;
@@ -196,7 +235,7 @@ export const NavBtnLinkIS = styled(LinkR)`
   font-weight: bold;
   color: #f4f4fc;
   font-style: oblique;
-  font-variant:small-caps;
+  font-variant: small-caps;
   outline: none;
   border: none;
   cursor: pointer;
@@ -206,6 +245,6 @@ export const NavBtnLinkIS = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background: none;
-    color: #1CC7D9;
+    color: #1cc7d9;
   }
-  `
+`;

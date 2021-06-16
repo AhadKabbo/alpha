@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Footer from '../Footer';
 import NavbarPage from '../Navbar/indexPage';
-import Sidebar from '../SideBar';
+import SidebarPage from '../SideBar/indexPage';
 import AdminAnnouncmentFeed from '../Admin/AdminAnnouncmentFeed';
 import Fb from './Fb';
 import Insta from './Insta';
@@ -18,7 +18,7 @@ const SortGrp = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <SidebarPage isOpen={isOpen} toggle={toggle} />
       <NavbarPage toggle={toggle} {...navlogo} />
       <Container fluid style={{ marginTop: '6rem' }}>
         <AdminAnnouncmentFeed />
