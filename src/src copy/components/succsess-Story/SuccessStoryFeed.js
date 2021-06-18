@@ -50,7 +50,7 @@ export default function SuccessStoryFeed() {
         }}
       >
         <Card.Body>
-          {authUser.uid === '6zFrfJd0wiUrwjLzeYKrl8xMAqP2' ? (
+          {authUser.uid === 'zi8VRdgkixWXf2PvPq1HYdIuM0K3' ? (
             <>
               {stories.map(user => (
                 <Container

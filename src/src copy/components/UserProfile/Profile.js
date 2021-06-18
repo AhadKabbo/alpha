@@ -27,7 +27,7 @@ const Profile = ({ alt, img }) => {
 
   return authResolved ? (
     <>
-      {authUser.uid === '6zFrfJd0wiUrwjLzeYKrl8xMAqP2' ? (
+      {authUser.uid === 'zi8VRdgkixWXf2PvPq1HYdIuM0K3' ? (
         <>
           {nameFilter.map(user => (
             <Card
