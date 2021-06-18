@@ -24,7 +24,7 @@ const AdminPage = () => {
       <NavbarPage toggle={toggle} {...navlogo} />
       <SidebarPage isOpen={isOpen} toggle={toggle} />
       <Container fluid style={{ marginTop: '6rem' }}>
-        {authUser.uid === 'zi8VRdgkixWXf2PvPq1HYdIuM0K3' ? (
+        {authUser.uid === 'pFzj469YxJh8GyFjJdadW5s3rWF3' ? (
           <>
             <CreatAdminPost />
             <ReportFeed />
